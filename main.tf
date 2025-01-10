@@ -13,9 +13,6 @@ module "lxc_a" {
   network_ip        = "dhcp"
   features_nesting  = true
 
-  providers = {
-    proxmox = proxmox
-  }
 }
 
 module "lxc_b" {
@@ -31,8 +28,5 @@ module "lxc_b" {
   network_ip        = "dhcp"
   features_nesting  = true
 
-  providers = {
-    proxmox = proxmox
-  }
 }
 

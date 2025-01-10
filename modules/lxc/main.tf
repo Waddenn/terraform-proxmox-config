@@ -24,4 +24,8 @@ resource "proxmox_lxc" "container" {
   features {
     nesting = var.features_nesting
   }
+
+  providers = {
+    proxmox = proxmox
+  }
 }
