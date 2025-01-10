@@ -12,6 +12,10 @@ module "lxc_a" {
   lxc_rootfs_size   = "8G"
   network_ip        = "dhcp"
   features_nesting  = true
+
+  providers = {
+    proxmox = proxmox
+  }
 }
 
 module "lxc_b" {
@@ -26,5 +30,9 @@ module "lxc_b" {
   lxc_rootfs_size   = "16G"
   network_ip        = "dhcp"
   features_nesting  = true
+
+  providers = {
+    proxmox = proxmox
+  }
 }
 
