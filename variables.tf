@@ -1,3 +1,5 @@
+#variables.tf
+
 variable "pm_api_url" {
   type        = string
   default     = "https://192.168.1.1:8006/api2/json"
