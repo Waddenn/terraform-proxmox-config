@@ -5,7 +5,7 @@ variable "lxc_hostname" {
   description = "Nom du conteneur LXC."
 }
 
-variable "ostemplate" {
+variable "lxc_ostemplate" {
   type        = string
   description = "OStemplate à utiliser pour le conteneur."
   default     = "local:vztmpl/debian-12-standard_12.2-1_amd64.tar.zst"
