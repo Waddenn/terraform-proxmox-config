@@ -25,7 +25,4 @@ resource "proxmox_lxc" "container" {
     nesting = var.features_nesting
   }
 
-  providers = {
-    proxmox = proxmox
-  }
 }
