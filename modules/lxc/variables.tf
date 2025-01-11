@@ -8,7 +8,7 @@ variable "lxc_hostname" {
 variable "lxc_ostemplate" {
   type        = string
   description = "OStemplate à utiliser pour le conteneur."
-  default     = "local:vztmpl/debian-12-standard_12.2-1_amd64.tar.zst"
+  default     = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
 }
 
 variable "target_node" {
