@@ -100,7 +100,7 @@ module "nixos-test" {
   source = "./modules/lxc"
 
   lxc_vmid         = 206
-  lxc_hostname      = "ansible"
+  lxc_hostname      = "nixos"
   target_node       = "proxade"
   lxc_cores         = 1
   lxc_memory        = 512
@@ -108,7 +108,7 @@ module "nixos-test" {
   unprivileged      = true
   lxc_ostemplate   = "local:vztmpl/nixos-system-x86_64-linux.tar.xz"
   lxc_rootfs_size   = "4G"
-  network_ip        = "192.168.1.204/24"
+  network_ip        = "192.168.1.206/24"
   network_gateway = "192.168.1.254"
   features_nesting  = true
   console_mode     = "console"
