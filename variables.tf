@@ -31,3 +31,15 @@ variable "lxc_password_b" {
   sensitive   = true
   description = "Mot de passe root pour le conteneur B"
 }
+
+variable "lxc_password_c" {
+  type        = string
+  sensitive   = true
+  description = "Mot de passe root pour le conteneur B"
+}
+
+variable "lxc_password_d" {
+  type        = string
+  sensitive   = true
+  description = "Mot de passe root pour le conteneur B"
+}
