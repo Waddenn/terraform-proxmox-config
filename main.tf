@@ -13,7 +13,7 @@ module "tailscale-subnet" {
   network_ip        = "192.168.1.201"
   network_gateway = "192.168.1.254"
   features_nesting  = true
-
+  ssh_public_key    = file("~/.ssh/id_rsa.pub")
 }
 
 module "tailscale-exit-node" {
@@ -29,6 +29,6 @@ module "tailscale-exit-node" {
   network_ip        = "192.168.1.202"
   network_gateway = "192.168.1.254"
   features_nesting  = true
-
+  ssh_public_key    = file("~/.ssh/id_rsa.pub")
 }
 
