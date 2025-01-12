@@ -100,4 +100,5 @@ variable "ssh_public_key" {
 variable "console_mode" {
   type        = string
   description = "Mode de console pour le conteneur (ex: tty ou /dev/console)."
+  default     = "tty"
 }
