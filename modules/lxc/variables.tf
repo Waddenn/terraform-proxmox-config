@@ -1,5 +1,11 @@
 # modules/lxc/variables.tf
 
+variable "lxc_vmid" {
+  type        = number
+  description = "ID unique pour le conteneur LXC."
+}
+
+
 variable "lxc_hostname" {
   type        = string
   description = "Nom du conteneur LXC."

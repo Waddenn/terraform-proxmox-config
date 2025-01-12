@@ -3,6 +3,7 @@
 module "tailscale-subnet" {
   source = "./modules/lxc"
 
+  lxc_vmid         = 201
   lxc_hostname      = "tailscale-subnet"
   target_node       = "proxade"
   lxc_cores         = 1
@@ -21,7 +22,8 @@ module "tailscale-subnet" {
 module "tailscale-exit-node" {
   source = "./modules/lxc"
 
-  lxc_hostname      = "test-lxc-b"
+  lxc_vmid         = 202
+  lxc_hostname      = "tailscale-exit-node"
   target_node       = "proxade"
   lxc_cores         = 1
   lxc_memory        = 128

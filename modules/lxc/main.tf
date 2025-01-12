@@ -1,6 +1,7 @@
 # modules/lxc/main.tf
 
 resource "proxmox_lxc" "container" {
+  vmid         = var.lxc_vmid
   hostname     = var.lxc_hostname
   ostemplate   = var.lxc_ostemplate
   target_node  = var.target_node
