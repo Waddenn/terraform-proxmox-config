@@ -5,7 +5,6 @@ variable "lxc_vmid" {
   description = "ID unique pour le conteneur LXC."
 }
 
-
 variable "lxc_hostname" {
   type        = string
   description = "Nom du conteneur LXC."
