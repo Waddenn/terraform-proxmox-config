@@ -3,6 +3,12 @@ resource "proxmox_lxc" "clone" {
   hostname     = var.lxc_hostname
   target_node  = var.target_node
   clone        = var.template_id
+}
+
+resource "proxmox_lxc" "config" {
+  vmid         = proxmox_lxc.clone.vmid
+  hostname     = proxmox_lxc.clone.hostname
+  target_node  = proxmox_lxc.clone.target_node
   cores        = var.lxc_cores
   memory       = var.lxc_memory
   password     = var.lxc_password
@@ -22,4 +28,6 @@ resource "proxmox_lxc" "clone" {
   }
 
   ssh_public_keys = var.ssh_public_key
+
+  depends_on = [proxmox_lxc.clone]
 }
