@@ -8,7 +8,7 @@ resource "proxmox_lxc" "container" {
   cores        = var.lxc_cores
   memory       = var.lxc_memory
   password     = var.lxc_password
-  ostype       = var.ostype
+  # ostype       = var.ostype
   cmode        = var.console_mode
 
   rootfs {
