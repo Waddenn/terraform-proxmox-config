@@ -10,7 +10,8 @@ module "lxc_a" {
   lxc_password      = var.lxc_password_a
   unprivileged      = true
   lxc_rootfs_size   = "8G"
-  network_ip        = "dhcp"
+  network_ip        = "192.168.1.201"
+  network_gateway = "192.168.1.254"
   features_nesting  = true
 
 }
@@ -25,7 +26,8 @@ module "lxc_b" {
   lxc_password      = var.lxc_password_b
   unprivileged      = true
   lxc_rootfs_size   = "16G"
-  network_ip        = "dhcp"
+  network_ip        = "192.168.1.202"
+  network_gateway = "192.168.1.254"
   features_nesting  = true
 
 }
