@@ -17,7 +17,8 @@ resource "proxmox_lxc" "container" {
   network {
     name     = var.network_name
     bridge   = var.network_bridge
-    ip     = "${var.network_ip},${var.network_gateway}"
+    ip       = "${var.network_ip}"
+    gw       = "${var.network_gateway}"
     firewall = var.network_firewall
   }
 
