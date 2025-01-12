@@ -86,3 +86,8 @@ variable "features_nesting" {
   description = "Activer le nesting"
   default     = true
 }
+
+variable "ssh_public_key" {
+  type        = string
+  description = "Clé publique SSH à ajouter pour le compte root."
+}

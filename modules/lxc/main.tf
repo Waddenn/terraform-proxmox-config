@@ -25,5 +25,6 @@ resource "proxmox_lxc" "container" {
   features {
     nesting = var.features_nesting
   }
-
+  
+  ssh-public-keys = var.ssh_public_key
 }
