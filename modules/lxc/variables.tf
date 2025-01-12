@@ -22,7 +22,6 @@ variable "lxc_ostemplate" {
   default     = null
 }
 
-
 variable "target_node" {
   type        = string
   description = "Node Proxmox cible."
@@ -104,7 +103,3 @@ variable "ssh_public_key" {
   description = "Clés publiques SSH pour le compte root du conteneur."
 }
 
-variable "lxc_clone" {
-  type        = string
-  description = "Conteneur ou template source à cloner."
-}
