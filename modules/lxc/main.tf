@@ -17,14 +17,14 @@ resource "proxmox_lxc" "container" {
   network {
     name     = var.network_name
     bridge   = var.network_bridge
-    ip       = var.network_ip
+    ip     = "${var.network_ip},${var.network_gateway}"
     firewall = var.network_firewall
-    gateway  = var.network_gateway
   }
 
   features {
     nesting = var.features_nesting
   }
   
-  ssh-public-keys = var.ssh_public_key
+  ssh_public_keys = var.ssh_public_key
+
 }

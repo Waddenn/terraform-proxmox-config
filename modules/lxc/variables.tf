@@ -89,5 +89,6 @@ variable "features_nesting" {
 
 variable "ssh_public_key" {
   type        = string
-  description = "Clé publique SSH à ajouter pour le compte root."
+  description = "Clés publiques SSH pour le compte root du conteneur."
 }
+
