@@ -106,7 +106,7 @@ module "nixos-test" {
   lxc_memory        = 512
   lxc_password      = null
   unprivileged      = true
-  lxc_ostemplate   = "local:vztmpl/nixos-system-24-11-x86_64-linux.tar.xz"
+  lxc_ostemplate   = "local:vztmpl/nixos-system-linux.tar.xz"
   lxc_rootfs_size   = "4G"
   network_ip        = "192.168.1.206/24"
   network_gateway = "192.168.1.254"
