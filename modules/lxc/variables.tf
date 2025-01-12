@@ -70,6 +70,11 @@ variable "network_ip" {
   default     = "dhcp"
 }
 
+variable "network_gateway" {
+  type        = string
+  description = "Passerelle réseau pour les conteneurs."
+}
+
 variable "network_firewall" {
   type        = bool
   description = "Activer le firewall Proxmox sur cette interface ?"

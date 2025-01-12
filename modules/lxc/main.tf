@@ -19,6 +19,7 @@ resource "proxmox_lxc" "container" {
     bridge   = var.network_bridge
     ip       = var.network_ip
     firewall = var.network_firewall
+    gateway  = var.network_gateway
   }
 
   features {
