@@ -10,16 +10,10 @@ variable "lxc_hostname" {
   description = "Nom du conteneur LXC."
 }
 
-variable "lxc_clone" {
-  type        = string
-  description = "Conteneur ou template source à cloner. Laisser null si vous utilisez un ostemplate."
-  default     = null
-}
-
 variable "lxc_ostemplate" {
   type        = string
-  description = "Template à utiliser pour créer un conteneur (non cloné)."
-  default     = null
+  description = "OStemplate à utiliser pour le conteneur."
+  default     = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
 }
 
 variable "target_node" {

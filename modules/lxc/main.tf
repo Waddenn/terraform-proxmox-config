@@ -3,8 +3,7 @@
 resource "proxmox_lxc" "container" {
   vmid         = var.lxc_vmid
   hostname     = var.lxc_hostname
-  clone        = var.lxc_clone != null ? var.lxc_clone : null
-  ostemplate   = var.lxc_clone == null ? var.lxc_ostemplate : null
+  ostemplate   = var.lxc_ostemplate
   target_node  = var.target_node
   cores        = var.lxc_cores
   memory       = var.lxc_memory
@@ -13,7 +12,7 @@ resource "proxmox_lxc" "container" {
 
   rootfs {
     storage = var.lxc_storage
-    size    = var.lxc_clone == null ? var.lxc_rootfs_size : null
+    size    = var.lxc_rootfs_size
   }
 
   network {
