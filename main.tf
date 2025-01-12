@@ -104,7 +104,7 @@ module "nixos-test" {
   target_node       = "proxade"
   lxc_cores         = 1
   lxc_memory        = 512
-  lxc_password      = null
+  lxc_password      = var.lxc_password_d
   unprivileged      = true
   lxc_ostemplate   = "local:vztmpl/nixos-system-linux.tar.xz"
   lxc_rootfs_size   = "4G"
