@@ -83,7 +83,7 @@ module "web_server" {
   lxc_hostname     = "web-server"
   target_node      = "proxade"
   template_id      = "298"
-  lxc_cores        = 2
+  lxc_cores        = 4
   lxc_memory       = 1024
   lxc_password     = var.lxc_password_d
   unprivileged     = true
