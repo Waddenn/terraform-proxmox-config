@@ -102,3 +102,9 @@ variable "console_mode" {
   description = "Mode de console pour le conteneur (ex: tty ou /dev/console)."
   default     = "tty"
 }
+
+variable "ostype" {
+  type        = string
+  description = "Type de système d'exploitation à utiliser pour le conteneur (ex : unmanaged, debian, etc.)."
+  default     = "debian"
+}
