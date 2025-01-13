@@ -67,7 +67,7 @@ module "uptime-kuma" {
   lxc_memory        = 1024
   lxc_password      = null
   unprivileged      = true
-  lxc_ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta736170.130595eba610-x86_64-linux.tar.xz"
+  lxc_ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
   lxc_rootfs_size   = "4G"
   network_ip        = "192.168.1.204/24"
   network_gateway = "192.168.1.254"
