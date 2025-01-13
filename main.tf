@@ -45,7 +45,7 @@ module "ansible" {
   lxc_hostname      = "ansible"
   target_node       = "proxade"
   lxc_cores         = 1
-  lxc_memory        = 512
+  lxc_memory        = 1024
   lxc_password      = var.lxc_password_d
   unprivileged      = true
   lxc_rootfs_size   = "4G"
@@ -64,7 +64,7 @@ module "uptime-kuma" {
   lxc_hostname      = "uptime-kuma"
   target_node       = "proxade"
   lxc_cores         = 1
-  lxc_memory        = 512
+  lxc_memory        = 1024
   lxc_password      = null
   unprivileged      = true
   lxc_ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta736170.130595eba610-x86_64-linux.tar.xz"
@@ -86,7 +86,7 @@ module "prometheus" {
   lxc_hostname      = "prometheus"
   target_node       = "proxade"
   lxc_cores         = 1
-  lxc_memory        = 512
+  lxc_memory        = 1024
   lxc_password      = null
   unprivileged      = true
   lxc_ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta736170.130595eba610-x86_64-linux.tar.xz"
@@ -108,7 +108,7 @@ module "grafana" {
   lxc_hostname      = "grafana"
   target_node       = "proxade"
   lxc_cores         = 1
-  lxc_memory        = 512
+  lxc_memory        = 1024
   lxc_password      = null
   unprivileged      = true
   lxc_ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta736170.130595eba610-x86_64-linux.tar.xz"
