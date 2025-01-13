@@ -44,7 +44,7 @@ module "ansible" {
   lxc_vmid         = 203
   lxc_hostname      = "ansible"
   target_node       = "proxade"
-  lxc_cores         = 1
+  lxc_cores         = 2
   lxc_memory        = 1024
   lxc_password      = var.lxc_password_d
   unprivileged      = true
@@ -63,7 +63,7 @@ module "uptime-kuma" {
   lxc_vmid         = 204
   lxc_hostname      = "uptime-kuma"
   target_node       = "proxade"
-  lxc_cores         = 1
+  lxc_cores         = 2
   lxc_memory        = 1024
   lxc_password      = null
   unprivileged      = true
@@ -85,7 +85,7 @@ module "prometheus" {
   lxc_vmid         = 205
   lxc_hostname      = "prometheus"
   target_node       = "proxade"
-  lxc_cores         = 1
+  lxc_cores         = 2
   lxc_memory        = 1024
   lxc_password      = null
   unprivileged      = true
@@ -107,7 +107,7 @@ module "grafana" {
   lxc_vmid         = 206
   lxc_hostname      = "grafana"
   target_node       = "proxade"
-  lxc_cores         = 1
+  lxc_cores         = 2
   lxc_memory        = 1024
   lxc_password      = null
   unprivileged      = true
