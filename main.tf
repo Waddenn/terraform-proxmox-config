@@ -171,7 +171,7 @@ module "searxng" {
   source = "./modules/lxc"
 
   lxc_vmid         = 209
-  lxc_hostname      = "searxngr"
+  lxc_hostname      = "searxng"
   target_node       = "proxade"
   lxc_cores         = 2
   lxc_memory        = 512
