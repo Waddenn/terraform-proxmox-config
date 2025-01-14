@@ -168,7 +168,7 @@ module "adguardhome" {
 }
 
 module "searxng" {
-  source            = "./modules/lxc_custom"
+  source            = "./modules/lxc"
   lxc_vmid          = 209
   lxc_hostname      = "searxng"
   target_node       = "proxade"
