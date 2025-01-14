@@ -167,14 +167,14 @@ module "adguardhome" {
   EOT
 }
 
-module "mullvad-browser" {
+module "searxng" {
   source = "./modules/lxc"
 
   lxc_vmid         = 209
-  lxc_hostname      = "mullvad-browser"
+  lxc_hostname      = "searxngr"
   target_node       = "proxade"
   lxc_cores         = 2
-  lxc_memory        = 1024
+  lxc_memory        = 512
   lxc_password      = null
   unprivileged      = true
   lxc_ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
