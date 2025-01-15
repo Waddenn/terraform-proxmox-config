@@ -46,9 +46,10 @@ module "ansible" {
   target_node       = "proxade"
   lxc_cores         = 2
   lxc_memory        = 1024
-  lxc_password      = var.lxc_password_d
+  lxc_password      = null
   unprivileged      = true
-  lxc_rootfs_size   = "4G"
+  lxc_ostemplate    = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
+  lxc_rootfs_size   = "8G"
   network_ip        = "192.168.1.204/24"
   network_gateway = "192.168.1.254"
   features_nesting  = true
