@@ -50,7 +50,7 @@ module "ansible" {
   unprivileged      = true
   lxc_ostemplate    = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
   lxc_rootfs_size   = "8G"
-  network_ip        = "192.168.1.204/24"
+  network_ip        = "192.168.1.203/24"
   network_gateway = "192.168.1.254"
   features_nesting  = true
   ssh_public_key    = <<-EOT
