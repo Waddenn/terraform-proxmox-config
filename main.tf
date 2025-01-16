@@ -7,7 +7,7 @@ module "tailscale-subnet" {
   lxc_hostname      = "tailscale-subnet"
   target_node       = "proxade"
   lxc_cores         = 1
-  lxc_memory        = 128
+  lxc_memory        = 1024
   lxc_password      = var.lxc_password_a
   unprivileged      = true
   lxc_rootfs_size   = "4G"
@@ -26,7 +26,7 @@ module "tailscale-exit-node" {
   lxc_hostname      = "tailscale-exit-node"
   target_node       = "proxade"
   lxc_cores         = 1
-  lxc_memory        = 128
+  lxc_memory        = 1024
   lxc_password      = var.lxc_password_b
   unprivileged      = true
   lxc_rootfs_size   = "4G"
