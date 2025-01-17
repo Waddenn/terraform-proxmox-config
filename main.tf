@@ -218,7 +218,7 @@ module "debian_vm" {
   target_node  = "proxade"
   iso_file     = "local:iso/debian-12.9.0-amd64-netinst.iso"
   
-  cores        = 2
+  cores        = 6
   memory       = 4096
   disk_storage = "Storage2"
   disk_size    = "32G"
