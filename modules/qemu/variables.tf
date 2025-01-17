@@ -55,11 +55,11 @@ variable "qemu_disk_size" {
   default     = "10G"
 }
 
-# variable "qemu_disk_type" {
-#   type        = string
-#   description = "Type de disque (ex: scsi, sata, virtio, etc.)."
-#   default     = "scsi"
-# }
+variable "qemu_disk_type" {
+  type        = string
+  description = "Type de disque (ex: scsi, sata, virtio, etc.)."
+  default     = "scsi"
+}
 
 variable "qemu_disk_storage" {
   type        = string
