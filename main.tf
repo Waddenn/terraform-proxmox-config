@@ -6,8 +6,6 @@ module "lxc_containers" {
       vmid         = 201
       hostname     = "tailscale-subnet"
       target_node  = "proxade"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
-      password     = null
       network = {
         ip       = "192.168.1.201/24"
         gateway  = "192.168.1.254"
@@ -18,7 +16,6 @@ module "lxc_containers" {
       vmid        = 202
       hostname    = "tailscale-exit-node"
       target_node = "proxade"
-      ostemplate  = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       network = {
         ip      = "192.168.1.202/24"
       }
@@ -28,7 +25,6 @@ module "lxc_containers" {
       vmid        = 203
       hostname    = "ansible"
       target_node = "proxade"
-      ostemplate  = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       network = {
         ip      = "192.168.1.203/24"
       }
@@ -38,7 +34,6 @@ module "lxc_containers" {
       vmid         = 204
       hostname     = "uptime-kuma"
       target_node  = "proxade"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       console_mode = "console"
       ostype       = "nixos"
       network = {
@@ -50,7 +45,6 @@ module "lxc_containers" {
       vmid         = 205
       hostname     = "prometheus"
       target_node  = "proxade"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       console_mode = "console"
       ostype       = "nixos"
       network = {
@@ -62,7 +56,6 @@ module "lxc_containers" {
       vmid         = 206
       hostname     = "grafana"
       target_node  = "proxade"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       console_mode = "console"
       ostype       = "nixos"
       network = {
