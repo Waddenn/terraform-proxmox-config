@@ -36,8 +36,6 @@ resource "proxmox_vm_qemu" "vm" {
     slot    = 0   
        
   }
-   clone {
-    base_template_id = 1002
-    full_clone       = true
-  }
+   clone = 1002
+   full_clone = true
 }
