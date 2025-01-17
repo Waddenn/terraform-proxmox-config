@@ -21,7 +21,7 @@ resource "proxmox_vm_qemu" "this" {
     storage      = var.qemu_disk_storage
     storage_type = var.qemu_storage_type
     format       = var.qemu_disk_format
-    slot         = var.qemu_disk_position
+    # slot         = var.qemu_disk_position
   }
 
   # Réseau
@@ -33,7 +33,7 @@ resource "proxmox_vm_qemu" "this" {
   }
 
   # Cloud-init
-  ciuser  = var.qemu_ssh_user
+#   ciuser  = var.qemu_ssh_user
   sshkeys = var.qemu_ssh_public_keys
 
   # Démarrage auto
