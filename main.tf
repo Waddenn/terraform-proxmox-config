@@ -10,7 +10,6 @@ module "lxc_containers" {
       target_node  = "proxade"
       network = {
         ip       = "192.168.1.201/24"
-        gateway  = "192.168.1.254"
       }
     }
 
@@ -33,8 +32,6 @@ module "lxc_containers" {
     uptime_kuma = {
       vmid         = 204
       target_node  = "proxade"
-      console_mode = "console"
-      ostype       = "nixos"
       network = {
         ip      = "192.168.1.204/24"
       }
@@ -43,8 +40,6 @@ module "lxc_containers" {
     prometheus = {
       vmid         = 205
       target_node  = "proxade"
-      console_mode = "console"
-      ostype       = "nixos"
       network = {
         ip      = "192.168.1.205/24"
       }
@@ -53,8 +48,6 @@ module "lxc_containers" {
     grafana = {
       vmid         = 206
       target_node  = "proxade"
-      console_mode = "console"
-      ostype       = "nixos"
       network = {
         ip      = "192.168.1.206/24"
       }
