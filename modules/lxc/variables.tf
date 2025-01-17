@@ -109,8 +109,8 @@ variable "ostype" {
   default     = "debian"
 }
 
-variable "network_mtu" {
-  type        = number
-  description = "MTU (Maximum Transmission Unit) size for the network interface."
-  default     = 1500  
-}
+# variable "network_mtu" {
+#   type        = number
+#   description = "MTU (Maximum Transmission Unit) size for the network interface."
+#   default     = 1500  
+# }
