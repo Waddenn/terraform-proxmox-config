@@ -1,44 +1,36 @@
-resource "proxmox_vm_qemu" "this" {
-  vmid        = var.qemu_vmid
-  name        = var.qemu_name
+# modules/qemu/main.tf
+
+resource "proxmox_vm_qemu" "vm" {
+  name        = var.vm_name
+  vmid        = var.vm_id
   target_node = var.target_node
 
-  # Mémoire et CPU
-  memory      = var.qemu_memory
-  cores       = var.qemu_cores
-  sockets     = var.qemu_sockets
-  cpu         = var.qemu_cpu_type
+  # VM Base Configuration
+  iso         = var.iso_file
+  cores       = var.cores
+  sockets     = var.sockets
+  memory      = var.memory
+  bios        = var.bios
+  onboot      = var.start_on_boot
+  oncreate    = var.start_on_create
 
-  # ISO OU Clone
-  iso    = var.qemu_iso
-  # clone  = var.qemu_template
-  # full_clone = true
+  # Hardware Configuration
+  scsihw      = "virtio-scsi-pci"
+  boot        = "order=scsi0;ide2"
+  agent       = var.qemu_agent
 
-  # Disque
-  disk {
-    size         = var.qemu_disk_size
-    type         = var.qemu_disk_type
-    storage      = var.qemu_disk_storage
-    # storage_type = var.qemu_storage_type
-    format       = var.qemu_disk_format
-    # slot         = var.qemu_disk_position
-  }
-
-  # Réseau
+  # Network configuration
   network {
-    model    = var.qemu_net_model
-    bridge   = var.qemu_net_bridge
-    tag      = var.qemu_net_vlan
-    firewall = var.qemu_net_firewall
+    model    = "virtio"
+    bridge   = var.network_bridge
+    firewall = var.network_firewall
   }
 
-  # Cloud-init
-#   ciuser  = var.qemu_ssh_user
-#   sshkeys = var.qemu_ssh_public_keys
-
-  # Démarrage auto
-  onboot = var.qemu_onboot
-
-  # Activer KVM
-  kvm = true
+  # Disk configuration
+  disk {
+    type    = "scsi"
+    storage = var.disk_storage
+    size    = var.disk_size
+    format  = var.disk_format
+  }
 }

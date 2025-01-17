@@ -210,31 +210,16 @@ module "k3s" {
   EOT
 }
 
-module "my_qemu_vm" {
+module "debian_vm" {
   source = "./modules/qemu"
 
-  qemu_vmid        = 1002
-  qemu_name        = "debian12-qemu"
-  target_node      = "proxade"
-
-  qemu_memory      = 4048
-  qemu_cores       = 6
-  qemu_sockets     = 1
-  qemu_cpu_type    = "host"
-
-  # Utilisation d'un ISO
-  qemu_iso         = "local:iso/debian-12.9.0-amd64-netinst.iso"
-
-  # ou bien pour cloner un template existant (décommentez et mettez iso = "")
-  # qemu_template    = "debian12-template"
-  # (N'oubliez pas de décommenter la section clone dans main.tf du module si vous optez pour le clonage)
-
-  qemu_disk_size   = "20G"
-  qemu_disk_storage = "local-lvm"
-
-  qemu_net_model    = "virtio"
-  qemu_net_bridge   = "vmbr0"
-  qemu_net_vlan     = 0
-  qemu_net_firewall = false
-
+  vm_name      = "debian-vm"
+  vm_id        = 301
+  target_node  = "proxade"
+  iso_file     = "local:iso/debian-12.9.0-amd64-netinst.iso"
+  
+  cores        = 2
+  memory       = 4096
+  disk_storage = "Storage2"
+  disk_size    = "32G"
 }
