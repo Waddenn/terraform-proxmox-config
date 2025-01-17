@@ -28,6 +28,6 @@ resource "proxmox_vm_qemu" "vm" {
     slot    = "scsi0"
        
   }
-   clone = 1002
+   clone_id = 1002
    full_clone = true
 }
