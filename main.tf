@@ -21,7 +21,6 @@ module "lxc_containers" {
       ostemplate  = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       network = {
         ip      = "192.168.1.202/24"
-
       }
     }
 
@@ -32,7 +31,6 @@ module "lxc_containers" {
       ostemplate  = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       network = {
         ip      = "192.168.1.203/24"
-
       }
     }
 
@@ -45,7 +43,6 @@ module "lxc_containers" {
       ostype       = "nixos"
       network = {
         ip      = "192.168.1.204/24"
-
       }
     }
 
@@ -58,7 +55,6 @@ module "lxc_containers" {
       ostype       = "nixos"
       network = {
         ip      = "192.168.1.205/24"
-
       }
     }
 
@@ -71,7 +67,6 @@ module "lxc_containers" {
       ostype       = "nixos"
       network = {
         ip      = "192.168.1.206/24"
-
       }
     }
   }
