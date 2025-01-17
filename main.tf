@@ -2,7 +2,6 @@ module "lxc_containers" {
   source = "./modules/lxc"
 
   containers = {
-    # Exemple : Tailscale-subnet
     tailscale_subnet = {
       vmid         = 201
       hostname     = "tailscale-subnet"
@@ -15,7 +14,6 @@ module "lxc_containers" {
       }
     }
 
-    # Exemple : Tailscale-exit-node
     tailscale_exit_node = {
       vmid        = 202
       hostname    = "tailscale-exit-node"
@@ -23,11 +21,10 @@ module "lxc_containers" {
       ostemplate  = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       network = {
         ip      = "192.168.1.202/24"
-        gateway = "192.168.1.254"
+
       }
     }
 
-    # Exemple : Ansible
     ansible = {
       vmid        = 203
       hostname    = "ansible"
@@ -35,11 +32,10 @@ module "lxc_containers" {
       ostemplate  = "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz"
       network = {
         ip      = "192.168.1.203/24"
-        gateway = "192.168.1.254"
+
       }
     }
 
-    # Exemple : Uptime-kuma
     uptime_kuma = {
       vmid         = 204
       hostname     = "uptime-kuma"
@@ -49,11 +45,10 @@ module "lxc_containers" {
       ostype       = "nixos"
       network = {
         ip      = "192.168.1.204/24"
-        gateway = "192.168.1.254"
+
       }
     }
 
-    # Exemple : Prometheus
     prometheus = {
       vmid         = 205
       hostname     = "prometheus"
@@ -63,11 +58,10 @@ module "lxc_containers" {
       ostype       = "nixos"
       network = {
         ip      = "192.168.1.205/24"
-        gateway = "192.168.1.254"
+
       }
     }
 
-    # Exemple : Grafana
     grafana = {
       vmid         = 206
       hostname     = "grafana"
@@ -77,7 +71,7 @@ module "lxc_containers" {
       ostype       = "nixos"
       network = {
         ip      = "192.168.1.206/24"
-        gateway = "192.168.1.254"
+
       }
     }
   }
