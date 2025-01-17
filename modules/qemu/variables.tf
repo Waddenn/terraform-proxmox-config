@@ -67,11 +67,11 @@ variable "qemu_disk_storage" {
   default     = "local-lvm"
 }
 
-variable "qemu_storage_type" {
-  type        = string
-  description = "Type de stockage (ex: lvm, qcow2, raw)."
-  default     = "lvm"
-}
+# variable "qemu_storage_type" {
+#   type        = string
+#   description = "Type de stockage (ex: lvm, qcow2, raw)."
+#   default     = "lvm"
+# }
 
 variable "qemu_disk_format" {
   type        = string
