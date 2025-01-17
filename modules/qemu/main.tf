@@ -28,7 +28,7 @@ resource "proxmox_vm_qemu" "vm" {
   }
    os_type    = "l26"
   # Disk configuration
-  disks {
+  disk {
     type    = "scsi"
     storage = var.disk_storage
     size    = var.disk_size
