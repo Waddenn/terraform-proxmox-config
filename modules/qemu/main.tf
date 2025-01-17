@@ -24,13 +24,16 @@ resource "proxmox_vm_qemu" "vm" {
     model    = "virtio"
     bridge   = var.network_bridge
     firewall = var.network_firewall
+    tag      = -1  
   }
-
+   os_type    = "l26"
   # Disk configuration
   disk {
     type    = "scsi"
     storage = var.disk_storage
     size    = var.disk_size
     format  = var.disk_format
+    slot    = 0                   
+    ssd     = 1
   }
 }
