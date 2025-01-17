@@ -23,8 +23,8 @@ resource "proxmox_vm_qemu" "vm" {
     model    = "virtio"
     bridge   = var.network_bridge
     firewall = var.network_firewall
-    tag      = -1  
-    id      = "vmbr0"
+    tag      = 0
+    id      = 0
   }
    os_type    = "l26"
   # Disk configuration
