@@ -214,7 +214,7 @@ module "debian_vm" {
   source = "./modules/qemu"
 
   vm_name      = "debian-vm"
-  vm_id        = 1003
+  vm_id        = 1005
   target_node  = "proxade"
   iso_file     = "local:iso/debian-12.9.0-amd64-netinst.iso"
   
