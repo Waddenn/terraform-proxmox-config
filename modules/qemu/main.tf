@@ -12,7 +12,7 @@ resource "proxmox_vm_qemu" "vm" {
   memory      = var.memory
   bios        = var.bios
   onboot      = var.start_on_boot
-  start       = var.start_on_create  # Correction: oncreate -> start
+#   start       = var.start_on_create  # Correction: oncreate -> start
 
   # Hardware Configuration
   scsihw      = "virtio-scsi-pci"
