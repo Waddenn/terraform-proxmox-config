@@ -28,21 +28,21 @@ resource "proxmox_vm_qemu" "vm" {
   }
    os_type    = "l26"
   # Disk configuration
-  disk {
+  disks {
     type    = "scsi"
     storage = var.disk_storage
     size    = var.disk_size
     format  = var.disk_format
-    slot    = 0              
-  }
+    slot    = 0   
 
-    disks {
     ide {
       ide2 {
         cdrom {
           iso = "local:iso/debian-12.9.0-amd64-netinst.iso"
         }
       }
-    }
+    }          
   }
+
+
 }
