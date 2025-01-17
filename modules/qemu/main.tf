@@ -25,6 +25,7 @@ resource "proxmox_vm_qemu" "vm" {
     storage = var.disk_storage
     size    = var.disk_size
     format  = var.disk_format
+    slot    = "scsi0"
        
   }
    clone = 1002
