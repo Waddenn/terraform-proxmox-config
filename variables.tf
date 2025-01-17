@@ -19,27 +19,3 @@ variable "pm_tls_insecure" {
   type        = bool
   default     = true
 }
-
-variable "lxc_password_a" {
-  type        = string
-  sensitive   = true
-  description = "Mot de passe root pour le conteneur A"
-}
-
-variable "lxc_password_b" {
-  type        = string
-  sensitive   = true
-  description = "Mot de passe root pour le conteneur B"
-}
-
-variable "lxc_password_c" {
-  type        = string
-  sensitive   = true
-  description = "Mot de passe root pour le conteneur B"
-}
-
-variable "lxc_password_d" {
-  type        = string
-  sensitive   = true
-  description = "Mot de passe root pour le conteneur B"
-}

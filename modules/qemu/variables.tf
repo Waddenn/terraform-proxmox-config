@@ -45,12 +45,6 @@ variable "start_on_boot" {
   default     = true
 }
 
-# variable "start_on_create" {
-#   type        = bool
-#   description = "Démarrer la VM après sa création"
-#   default     = true
-# }
-
 variable "qemu_agent" {
   type        = bool
   description = "Activer l'agent QEMU"
@@ -79,8 +73,3 @@ variable "disk_size" {
   description = "Taille du disque (ex: 32G)"
 }
 
-variable "disk_format" {
-  type        = string
-  description = "Format du disque (raw, qcow2)"
-  default     = "raw"
-}

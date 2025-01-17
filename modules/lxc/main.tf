@@ -1,35 +1,39 @@
-# modules/lxc/main.tf
+resource "proxmox_lxc" "containers" {
+  # On boucle sur la map "containers" pour créer un conteneur par clé
+  for_each = var.containers
 
-resource "proxmox_lxc" "container" {
-  vmid         = var.lxc_vmid
-  hostname     = var.lxc_hostname
-  ostemplate   = var.lxc_ostemplate
-  target_node  = var.target_node
-  cores        = var.lxc_cores
-  memory       = var.lxc_memory
-  password     = var.lxc_password
-  unprivileged = var.unprivileged
-  cmode        = var.console_mode
-  ostype       = var.ostype
+  vmid         = each.value.vmid
+  hostname     = each.value.hostname
+  ostemplate   = each.value.ostemplate
+  target_node  = each.value.target_node
 
+  cores        = each.value.cores
+  memory       = each.value.memory
+  password     = each.value.password
+  unprivileged = each.value.unprivileged
+  cmode        = each.value.console_mode
+  ostype       = each.value.ostype
+
+  # RootFS
   rootfs {
-    storage = var.lxc_storage
-    size    = var.lxc_rootfs_size
+    storage = each.value.rootfs_storage
+    size    = each.value.rootfs_size
   }
 
+  # Réseau
   network {
-    name     = var.network_name
-    bridge   = var.network_bridge
-    ip       = "${var.network_ip}"
-    gw       = "${var.network_gateway}"
-    firewall = var.network_firewall
-    # mtu      = 1500 
+    name     = each.value.network.name
+    bridge   = each.value.network.bridge
+    ip       = each.value.network.ip
+    gw       = each.value.network.gateway
+    firewall = each.value.network.firewall
   }
 
+  # Features
   features {
-    nesting = var.features_nesting
+    nesting = each.value.features.nesting
   }
-  
-  ssh_public_keys = var.ssh_public_key
 
+  # Clés SSH
+  ssh_public_keys = each.value.ssh_public_keys
 }
