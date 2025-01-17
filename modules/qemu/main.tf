@@ -34,7 +34,7 @@ resource "proxmox_vm_qemu" "this" {
 
   # Cloud-init
 #   ciuser  = var.qemu_ssh_user
-  sshkeys = var.qemu_ssh_public_keys
+#   sshkeys = var.qemu_ssh_public_keys
 
   # Démarrage auto
   onboot = var.qemu_onboot
