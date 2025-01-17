@@ -108,3 +108,9 @@ variable "ostype" {
   description = "Type de système d'exploitation à utiliser pour le conteneur (ex : unmanaged, debian, etc.)."
   default     = "debian"
 }
+
+variable "network_mtu" {
+  type        = number
+  description = "MTU (Maximum Transmission Unit) size for the network interface."
+  default     = 1500  
+}
