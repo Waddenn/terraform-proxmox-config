@@ -19,7 +19,7 @@ resource "proxmox_vm_qemu" "this" {
     size         = var.qemu_disk_size
     type         = var.qemu_disk_type
     storage      = var.qemu_disk_storage
-    storage_type = var.qemu_storage_type
+    # storage_type = var.qemu_storage_type
     format       = var.qemu_disk_format
     # slot         = var.qemu_disk_position
   }
