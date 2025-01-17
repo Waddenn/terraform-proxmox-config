@@ -1,9 +1,10 @@
+#/modules/lxc/main.tf
+
 resource "proxmox_lxc" "containers" {
-  # On boucle sur la map "containers" pour créer un conteneur par clé
   for_each = var.containers
 
   vmid         = each.value.vmid
-  hostname     = each.value.hostname
+  hostname     = each.key
   ostemplate   = each.value.ostemplate
   target_node  = each.value.target_node
 
@@ -14,13 +15,11 @@ resource "proxmox_lxc" "containers" {
   cmode        = each.value.console_mode
   ostype       = each.value.ostype
 
-  # RootFS
   rootfs {
     storage = each.value.rootfs_storage
     size    = each.value.rootfs_size
   }
 
-  # Réseau
   network {
     name     = each.value.network.name
     bridge   = each.value.network.bridge
@@ -29,11 +28,9 @@ resource "proxmox_lxc" "containers" {
     firewall = each.value.network.firewall
   }
 
-  # Features
   features {
     nesting = each.value.features.nesting
   }
 
-  # Clés SSH
   ssh_public_keys = each.value.ssh_public_keys
 }

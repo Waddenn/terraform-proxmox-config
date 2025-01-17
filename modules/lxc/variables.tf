@@ -1,3 +1,5 @@
+#/modules/lxc/variables.tf
+
 variable "containers" {
 
   type = map(object({
