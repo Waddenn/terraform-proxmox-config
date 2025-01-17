@@ -37,11 +37,11 @@ variable "qemu_cpu_type" {
   default     = "kvm64"
 }
 
-variable "qemu_iso" {
-  type        = string
-  description = "Chemin vers l'ISO dans Proxmox (ex: 'local:iso/debian-12.iso')."
-  default     = ""
-}
+# variable "qemu_iso" {
+#   type        = string
+#   description = "Chemin vers l'ISO dans Proxmox (ex: 'local:iso/debian-12.iso')."
+#   default     = ""
+# }
 
 variable "qemu_template" {
   type        = string
