@@ -23,7 +23,7 @@ resource "proxmox_lxc" "container" {
     ip       = "${var.network_ip}"
     gw       = "${var.network_gateway}"
     firewall = var.network_firewall
-    mtu      = 1500 
+    # mtu      = 1500 
   }
 
   features {
