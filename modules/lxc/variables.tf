@@ -4,7 +4,7 @@ variable "containers" {
 
   type = map(object({
     vmid         = number
-    hostname     = string
+    hostname     = optional(string)
     target_node  = string
     ostemplate   = optional(string, "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz")
 
