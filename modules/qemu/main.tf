@@ -6,7 +6,6 @@ resource "proxmox_vm_qemu" "vm" {
   target_node = var.target_node
 
   # VM Base Configuration
-  iso         = var.iso_file
   cores       = var.cores
   sockets     = var.sockets
   memory      = var.memory
@@ -25,6 +24,7 @@ resource "proxmox_vm_qemu" "vm" {
     bridge   = var.network_bridge
     firewall = var.network_firewall
     tag      = -1  
+    id      = "vmbr0"
   }
    os_type    = "l26"
   # Disk configuration
@@ -33,7 +33,16 @@ resource "proxmox_vm_qemu" "vm" {
     storage = var.disk_storage
     size    = var.disk_size
     format  = var.disk_format
-    slot    = 0                   
-    ssd     = 1
+    slot    = 0              
+  }
+
+    disks {
+    ide {
+      ide2 {
+        cdrom {
+          iso = "local:iso/debian-12.9.0-amd64-netinst.iso"
+        }
+      }
+    }
   }
 }

@@ -15,12 +15,6 @@ variable "target_node" {
   description = "Node Proxmox cible"
 }
 
-variable "iso_file" {
-  type        = string
-  description = "Chemin de l'ISO dans le storage Proxmox (ex: local:iso/debian-12.0.0-amd64-netinst.iso)"
-  default = null
-}
-
 variable "cores" {
   type        = number
   description = "Nombre de coeurs CPU"
