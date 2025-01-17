@@ -210,15 +210,3 @@ module "k3s" {
   EOT
 }
 
-module "debian_vm" {
-  source = "./modules/qemu"
-
-  vm_name      = "debian-vm"
-  vm_id        = 1005
-  target_node  = "proxade"
-  
-  cores        = 6
-  memory       = 4096
-  disk_storage = "Storage2"
-  disk_size    = "32G"
-}
