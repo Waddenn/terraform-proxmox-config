@@ -50,11 +50,11 @@ variable "start_on_boot" {
   default     = true
 }
 
-variable "start_on_create" {
-  type        = bool
-  description = "Démarrer la VM après sa création"
-  default     = true
-}
+# variable "start_on_create" {
+#   type        = bool
+#   description = "Démarrer la VM après sa création"
+#   default     = true
+# }
 
 variable "qemu_agent" {
   type        = bool
