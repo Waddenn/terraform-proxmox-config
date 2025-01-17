@@ -221,5 +221,5 @@ module "debian_vm" {
   cores        = 6
   memory       = 4096
   disk_storage = "Storage2"
-  disk_size    = "32G"
+  disk_size    = "32"
 }

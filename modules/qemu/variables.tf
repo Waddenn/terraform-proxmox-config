@@ -80,8 +80,8 @@ variable "disk_storage" {
 }
 
 variable "disk_size" {
-  type        = string
-  description = "Taille du disque (ex: 32G)"
+  type        = number
+  description = "Taille du disque en GB"
 }
 
 variable "disk_format" {
