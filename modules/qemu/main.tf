@@ -36,12 +36,8 @@ resource "proxmox_vm_qemu" "vm" {
     slot    = 0   
        
   }
-
-    ide {
-      ide2 {
-        cdrom {
-          iso = "local:iso/debian-12.9.0-amd64-netinst.iso"
-        }
-      }
-    }   
+   clone {
+    base_template_id = 1002
+    full_clone       = true
+  }
 }
