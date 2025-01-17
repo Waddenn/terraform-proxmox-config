@@ -4,7 +4,7 @@ resource "proxmox_lxc" "containers" {
   for_each = var.containers
 
   vmid         = each.value.vmid
-  hostname     = each.key
+  hostname = coalesce(each.value.hostname, each.key)
   ostemplate   = each.value.ostemplate
   target_node  = each.value.target_node
 
