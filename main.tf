@@ -213,12 +213,12 @@ module "k3s" {
 module "my_qemu_vm" {
   source = "./modules/qemu"
 
-  qemu_vmid        = 1001
+  qemu_vmid        = 1002
   qemu_name        = "debian12-qemu"
   target_node      = "proxade"
 
-  qemu_memory      = 2048
-  qemu_cores       = 2
+  qemu_memory      = 4048
+  qemu_cores       = 6
   qemu_sockets     = 1
   qemu_cpu_type    = "host"
 
