@@ -34,6 +34,8 @@ resource "proxmox_vm_qemu" "vm" {
     size    = var.disk_size
     format  = var.disk_format
     slot    = 0   
+       
+  }
 
     ide {
       ide2 {
@@ -41,8 +43,5 @@ resource "proxmox_vm_qemu" "vm" {
           iso = "local:iso/debian-12.9.0-amd64-netinst.iso"
         }
       }
-    }          
-  }
-
-
+    }   
 }
