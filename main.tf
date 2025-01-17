@@ -5,7 +5,7 @@ module "lxc_containers" {
   source = "./modules/lxc"
 
   containers = {
-    tailscale_subnet = {
+    tailscale-subnet = {
       vmid         = 201
       target_node  = "proxade"
       network = {
@@ -13,7 +13,7 @@ module "lxc_containers" {
       }
     }
 
-    tailscale_exit_node = {
+    tailscale-exit-node = {
       vmid        = 202
       target_node = "proxade"
       network = {
@@ -29,7 +29,7 @@ module "lxc_containers" {
       }
     }
 
-    uptime_kuma = {
+    uptime-kuma = {
       vmid         = 204
       target_node  = "proxade"
       network = {
