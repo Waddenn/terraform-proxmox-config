@@ -79,11 +79,11 @@ variable "qemu_disk_format" {
   default     = "qcow2"
 }
 
-variable "qemu_disk_position" {
-  type        = string
-  description = "Position du disque sur le contrôleur (ex: 'scsi0', 'sata0')."
-  default     = "scsi0"
-}
+# variable "qemu_disk_position" {
+#   type        = string
+#   description = "Position du disque sur le contrôleur (ex: 'scsi0', 'sata0')."
+#   default     = "scsi0"
+# }
 
 variable "qemu_net_model" {
   type        = string
@@ -109,11 +109,11 @@ variable "qemu_net_firewall" {
   default     = false
 }
 
-variable "qemu_ssh_user" {
-  type        = string
-  description = "Nom d'utilisateur pour Cloud-Init."
-  default     = "root"
-}
+# variable "qemu_ssh_user" {
+#   type        = string
+#   description = "Nom d'utilisateur pour Cloud-Init."
+#   default     = "root"
+# }
 
 variable "qemu_ssh_public_keys" {
   type        = string

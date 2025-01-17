@@ -29,12 +29,11 @@ resource "proxmox_vm_qemu" "this" {
     # On peut spécifier la position (ex: sata0, scsi0, virtio0, etc.)
     # default : "scsi0"
     # Dans l’exemple ci-dessous on suppose un contrôleur "scsi".
-    position          = var.qemu_disk_position
+    # position          = var.qemu_disk_position
   }
 
   # Réseau
   network {
-    id      = 0
     model   = var.qemu_net_model
     bridge  = var.qemu_net_bridge
     vlan    = var.qemu_net_vlan
@@ -43,7 +42,7 @@ resource "proxmox_vm_qemu" "this" {
 
   # Cloud-Init (si vous utilisez des images cloud-init, sinon ignorer)
   # Permet de définir l'utilisateur, la clé SSH, etc.
-  ciuser         = var.qemu_ssh_user
+#   ciuser         = var.qemu_ssh_user
   ssh_public_keys = var.qemu_ssh_public_keys
 
   # Démarrage automatique
