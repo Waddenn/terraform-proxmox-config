@@ -12,7 +12,7 @@ variable "containers" {
     memory       = optional(number, 1024)
     password     = optional(string, null)
     unprivileged = optional(bool, true)
-    console_mode = optional(string, "tty")
+    console_mode = optional(string, "console")
     ostype       = optional(string, "nixos")
 
     rootfs_storage = optional(string, "Storage2")
