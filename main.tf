@@ -36,21 +36,5 @@ module "lxc_containers" {
         ip      = "192.168.1.204/24"
       }
     }
-
-    prometheus = {
-      vmid         = 205
-      target_node  = "proxade"
-      network = {
-        ip      = "192.168.1.205/24"
-      }
-    }
-
-    grafana = {
-      vmid         = 206
-      target_node  = "proxade"
-      network = {
-        ip      = "192.168.1.206/24"
-      }
-    }
   }
 }
