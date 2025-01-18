@@ -10,6 +10,7 @@ resource "proxmox_lxc" "containers" {
 
   cores        = each.value.cores
   memory       = each.value.memory
+  swap         = each.value.swap
   password     = each.value.password
   unprivileged = each.value.unprivileged
   cmode        = each.value.console_mode
