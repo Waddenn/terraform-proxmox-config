@@ -36,5 +36,13 @@ module "lxc_containers" {
         ip      = "192.168.1.204/24"
       }
     }
+
+    beszel = {
+      vmid         = 205
+      target_node  = "proxade"
+      network = {
+        ip      = "192.168.1.205/24"
+      }
+    }
   }
 }
