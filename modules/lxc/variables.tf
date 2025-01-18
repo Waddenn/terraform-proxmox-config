@@ -10,6 +10,7 @@ variable "containers" {
 
     cores        = optional(number, 2)
     memory       = optional(number, 1024)
+    swap         = optional(number, 512)
     password     = optional(string, null)
     unprivileged = optional(bool, true)
     console_mode = optional(string, "console")
