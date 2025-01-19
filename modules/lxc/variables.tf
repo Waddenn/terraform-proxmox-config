@@ -8,7 +8,7 @@ variable "containers" {
     target_node  = string
     ostemplate   = optional(string, "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz")
 
-    cores        = optional(number, 2)
+    cores        = optional(number, 3)
     memory       = optional(number, 1024)
     swap         = optional(number, 512)
     password     = optional(string, null)
