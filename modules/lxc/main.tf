@@ -34,4 +34,11 @@ resource "proxmox_lxc" "containers" {
   }
 
   ssh_public_keys = each.value.ssh_public_keys
+
+  provisioner "local-exec" {
+    command = <<EOT
+      pct set ${self.vmid} -cgroup2.devices.allow "c 10:200 rwm"
+      pct set ${self.vmid} -mp0 /dev/net/tun,mp=/dev/net/tun
+    EOT
+  }
 }
