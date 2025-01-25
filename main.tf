@@ -45,7 +45,7 @@ module "lxc_containers" {
   
     tailscale-subnet = {
       vmid         = 100
-      target_node  = "nuc-pve-1"
+      target_node  = "proxade"
       rootfs_storage = "local-lvm"
       ostemplate   = "nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
