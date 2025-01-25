@@ -4,14 +4,10 @@
 module "lxc_containers" {
   source = "./modules/lxc"
 
+
+# Proxade
+
   containers = {
-    tailscale-subnet = {
-      vmid         = 201
-      target_node  = "proxade"
-      network = {
-        ip       = "192.168.1.201/24"
-      }
-    }
 
     tailscale-exit-node = {
       vmid        = 202
@@ -44,5 +40,16 @@ module "lxc_containers" {
         ip      = "192.168.1.205/24"
       }
     }
+
+# nuc-pve-1
+  
+    tailscale-subnet = {
+      vmid         = 100
+      target_node  = "nuc-pve-1"
+      network = {
+        ip       = "192.168.1.100/24"
+      }
+    }
+
   }
 }
