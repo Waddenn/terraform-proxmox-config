@@ -46,6 +46,7 @@ module "lxc_containers" {
     tailscale-subnet = {
       vmid         = 100
       target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
       network = {
         ip       = "192.168.1.100/24"
       }
