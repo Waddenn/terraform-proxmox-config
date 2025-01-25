@@ -47,7 +47,6 @@ module "lxc_containers" {
       vmid         = 100
       target_node  = "proxade"
       rootfs_storage = "local-lvm"
-      ostemplate   = "nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         ip       = "192.168.1.100/24"
       }
