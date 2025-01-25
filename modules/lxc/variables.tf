@@ -11,6 +11,7 @@ variable "containers" {
     cores        = optional(number, 3)
     memory       = optional(number, 1024)
     swap         = optional(number, 512)
+    onboot       = optional(bool, true)
     password     = optional(string, null)
     unprivileged = optional(bool, true)
     console_mode = optional(string, "console")
