@@ -17,7 +17,7 @@ variable "containers" {
     ostype       = optional(string, "nixos")
 
     rootfs_storage = optional(string, "Storage2")
-    rootfs_size    = optional(string, "4G")
+    rootfs_size    = optional(string, "8G")
 
     network = optional(object({
       name     = optional(string, "eth0")
