@@ -9,14 +9,6 @@ module "lxc_containers" {
 
   containers = {
 
-    tailscale-exit-node = {
-      vmid        = 202
-      target_node = "proxade"
-      network = {
-        ip      = "192.168.1.202/24"
-      }
-    }
-
     ansible = {
       vmid        = 203
       target_node = "proxade"
@@ -50,6 +42,26 @@ module "lxc_containers" {
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         ip       = "192.168.1.100/24"
+      }
+    }
+
+    tailscale-exit-node = {
+      vmid         = 101
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.101/24"
+      }
+    }
+
+    beszel = {
+      vmid         = 102
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.102/24"
       }
     }
 
