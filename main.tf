@@ -63,6 +63,7 @@ module "lxc_containers" {
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
       rootfs_size = "120G"
+      memory = 2048
       cores = 6
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
