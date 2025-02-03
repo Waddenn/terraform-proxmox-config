@@ -70,7 +70,7 @@ module "lxc_containers" {
       }
     } 
 
-    homeassitant = {
+    homeassistant = {
       vmid         = 107
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
