@@ -4,18 +4,7 @@
 module "lxc_containers" {
   source = "./modules/lxc"
 
-
-# Proxade
-
   containers = {
-
-    ansible = {
-      vmid        = 203
-      target_node = "proxade"
-      network = {
-        ip      = "192.168.1.203/24"
-      }
-    }
 
 # nuc-pve-1
   
@@ -69,15 +58,5 @@ module "lxc_containers" {
       }
     }
 
-    nextcloud = {
-      vmid         = 105
-      target_node  = "nuc-pve-1"
-      rootfs_storage = "local-lvm"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
-      rootfs_size = "120G"
-      network = {
-        ip       = "192.168.1.105/24"
-      }
-    }
   }
 }
