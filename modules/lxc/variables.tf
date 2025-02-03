@@ -40,7 +40,7 @@ variable "containers" {
       nesting = true
     })
 
-    ssh_public_keys = optional(string, "<<-EOT ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEQ/EfBgfmE57qjrxnnqWIcenILtWqTibbJ7EehPgBvC tom@asus-nixos EOT")
+    ssh_public_keys = optional(string, "<<-EOT ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILDWrexcT0dL92oAYuMxLpS+2WxBzwYA38C/paRGsZ2i tom@asus-nixos EOT")
   }))
 
   default = {}
