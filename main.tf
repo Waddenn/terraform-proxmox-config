@@ -17,22 +17,6 @@ module "lxc_containers" {
       }
     }
 
-    uptime-kuma = {
-      vmid         = 204
-      target_node  = "proxade"
-      network = {
-        ip      = "192.168.1.204/24"
-      }
-    }
-
-    beszel = {
-      vmid         = 205
-      target_node  = "proxade"
-      network = {
-        ip      = "192.168.1.205/24"
-      }
-    }
-
 # nuc-pve-1
   
     tailscale-subnet = {
