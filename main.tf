@@ -58,6 +58,16 @@ module "lxc_containers" {
       }
     }
 
+    caddy = {
+      vmid         = 105
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.105/24"
+      }
+    }
+
     nextcloud = {
       vmid         = 106
       target_node  = "nuc-pve-1"
