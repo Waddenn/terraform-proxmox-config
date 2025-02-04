@@ -35,5 +35,6 @@ resource "proxmox_lxc" "containers" {
   }
 
   ssh_public_keys = each.value.ssh_public_keys
+  tags            = each.value.tags
 
 }

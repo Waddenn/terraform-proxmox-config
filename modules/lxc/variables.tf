@@ -41,6 +41,7 @@ variable "containers" {
     })
 
     ssh_public_keys = optional(string, "<<-EOT ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILDWrexcT0dL92oAYuMxLpS+2WxBzwYA38C/paRGsZ2i tom@asus-nixos EOT")
+    tags = optional(list(string), [])
   }))
 
   default = {}
