@@ -93,7 +93,6 @@ module "lxc_containers" {
       network = {
         ip       = "192.168.1.107/24"
       }
-      tags = ["docker"]
     } 
 
   }
