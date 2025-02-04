@@ -82,7 +82,6 @@ module "lxc_containers" {
       network = {
         ip       = "192.168.1.106/24"
       }
-      tags = ["docker"]
     } 
 
     homeassistant = {
