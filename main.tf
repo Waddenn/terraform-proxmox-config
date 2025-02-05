@@ -36,7 +36,6 @@ module "lxc_containers" {
       network = {
         ip       = "192.168.1.102/24"
       }
-      tags = ["docker"]
     }
 
     adguardhome = {
@@ -47,7 +46,6 @@ module "lxc_containers" {
       network = {
         ip       = "192.168.1.103/24"
       }
-      tags = ["docker"]
     }
 
     myspeed = {
@@ -58,7 +56,6 @@ module "lxc_containers" {
       network = {
         ip       = "192.168.1.104/24"
       }
-      tags = ["docker"]
     }
 
     caddy = {
@@ -92,7 +89,6 @@ module "lxc_containers" {
       network = {
         ip       = "192.168.1.107/24"
       }
-      tags = ["docker"]
     } 
 
     linkwarden = {
@@ -103,7 +99,6 @@ module "lxc_containers" {
       network = {
         ip       = "192.168.1.108/24"
       }
-      tags = ["docker"]
     } 
 
     ansible = {
