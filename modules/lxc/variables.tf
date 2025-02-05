@@ -9,7 +9,7 @@ variable "containers" {
     ostemplate   = optional(string, "local:vztmpl/nixos-image-lxc-proxmox-25.05beta-x86_64-linux.tar.xz")
 
     cores        = optional(number, 3)
-    memory       = optional(number, 1024)
+    memory       = optional(number, 2048)
     swap         = optional(number, 512)
     onboot       = optional(bool, true)
     password     = optional(string, null)
