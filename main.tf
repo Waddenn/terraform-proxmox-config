@@ -107,12 +107,12 @@ module "lxc_containers" {
     } 
 
     ansible = {
-      vmid         = 109
+      vmid         = 252
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        ip       = "192.168.1.109/24"
+        ip       = "192.168.1.252/24"
       }
     } 
 
