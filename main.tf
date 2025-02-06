@@ -1,4 +1,3 @@
-
 #main.tf
 
 module "lxc_containers" {
@@ -8,6 +7,16 @@ module "lxc_containers" {
 
 # nuc-pve-1
   
+    ansible = {
+      vmid         = 252
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.252/24"
+      }
+    } 
+
     tailscale-subnet = {
       vmid         = 100
       target_node  = "nuc-pve-1"
@@ -102,13 +111,13 @@ module "lxc_containers" {
       }
     } 
 
-    ansible = {
-      vmid         = 252
+    gotify = {
+      vmid         = 109
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        ip       = "192.168.1.252/24"
+        ip       = "192.168.1.109/24"
       }
     } 
 
@@ -122,6 +131,7 @@ module "lxc_containers" {
         ip       = "192.168.1.110/24"
       }
     } 
+
 
   }
 }
