@@ -91,7 +91,7 @@ module "lxc_containers" {
       }
     } 
 
-    authelia = {
+    authentik = {
       vmid         = 107
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
