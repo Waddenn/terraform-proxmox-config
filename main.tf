@@ -135,6 +135,7 @@ module "lxc_containers" {
       network = {
         bridge   = "VLAN20"
         ip       = "192.168.20.110/24"
+        gateway  = "192.168.20.254"
       }
     } 
 
