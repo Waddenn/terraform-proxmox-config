@@ -74,7 +74,9 @@ module "lxc_containers" {
       rootfs_storage = "local-lvm"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        ip       = "192.168.1.105/24"
+        bridge   = "VLAN20"
+        ip       = "192.168.20.105/24"
+        gateway  = "192.168.20.254"
       }
     }
 
@@ -87,7 +89,9 @@ module "lxc_containers" {
       cores = 6
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        ip       = "192.168.1.106/24"
+        bridge   = "VLAN20"
+        ip       = "192.168.20.106/24"
+        gateway  = "192.168.20.254"
       }
     } 
 
@@ -98,7 +102,9 @@ module "lxc_containers" {
       rootfs_size = "16G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        ip       = "192.168.1.107/24"
+        bridge   = "VLAN20"
+        ip       = "192.168.20.107/24"
+        gateway  = "192.168.20.254"
       }
     } 
 
