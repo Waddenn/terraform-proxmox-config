@@ -100,9 +100,9 @@ module "lxc_containers" {
       rootfs_storage = "local-lvm"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        bridge   = "VLAN20"
-        ip       = "192.168.20.105/24"
-        gateway  = "192.168.20.254"
+        bridge   = "VLAN40"
+        ip       = "192.168.40.105/24"
+        gateway  = "192.168.40.254"
       }
     }
 
@@ -115,9 +115,9 @@ module "lxc_containers" {
       cores = 6
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        bridge   = "VLAN20"
-        ip       = "192.168.20.106/24"
-        gateway  = "192.168.20.254"
+        bridge   = "VLAN40"
+        ip       = "192.168.40.106/24"
+        gateway  = "192.168.40.254"
       }
     } 
 
@@ -128,9 +128,9 @@ module "lxc_containers" {
       rootfs_size = "16G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        bridge   = "VLAN20"
-        ip       = "192.168.20.107/24"
-        gateway  = "192.168.20.254"
+        bridge   = "VLAN40"
+        ip       = "192.168.40.107/24"
+        gateway  = "192.168.40.254"
       }
     } 
 
@@ -141,9 +141,9 @@ module "lxc_containers" {
       rootfs_size = "16G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        bridge   = "VLAN20"
-        ip       = "192.168.20.108/24"
-        gateway  = "192.168.20.254"
+        bridge   = "VLAN40"
+        ip       = "192.168.40.108/24"
+        gateway  = "192.168.40.254"
       }
     } 
 
@@ -178,10 +178,11 @@ module "lxc_containers" {
       rootfs_size = "16G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-           bridge   = "VLAN20"
-           ip       = "192.168.20.112/24"
-            gateway  = "192.168.20.254"
+           bridge   = "VLAN40"
+           ip       = "192.168.40.112/24"
+            gateway  = "192.168.40.254"
       }
     }
+    
   }
 }
