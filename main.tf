@@ -88,7 +88,9 @@ module "lxc_containers" {
       rootfs_storage = "local-lvm"
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
+        bridge   = "VLAN20"
         ip       = "192.168.1.104/24"
+        gateway  = "192.168.20.254"
       }
     }
 
