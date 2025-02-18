@@ -171,6 +171,7 @@ module "lxc_containers" {
         gateway  = "192.168.20.254"
       }
     } 
+
     gitea = {
       vmid         = 112
       target_node  = "nuc-pve-1"
@@ -181,6 +182,18 @@ module "lxc_containers" {
            bridge   = "VLAN40"
            ip       = "192.168.40.112/24"
             gateway  = "192.168.40.254"
+      }
+    }
+
+    vaultwarden = {
+      vmid         = 113
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+           bridge   = "VLAN30"
+           ip       = "192.168.30.113/24"
+            gateway  = "192.168.30.254"
       }
     }
     
