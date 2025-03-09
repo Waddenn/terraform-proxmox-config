@@ -82,7 +82,7 @@ module "lxc_containers" {
       }
     }
 
-    nextcloud-test = {
+    gitlab = {
       vmid         = 104
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
