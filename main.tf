@@ -210,5 +210,18 @@ module "lxc_containers" {
            gateway  = "192.168.40.254"
     }
   }
+
+    immich = {
+      vmid         = 115
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      cores = 4
+      rootfs_size = "32G"
+      memory = 6144
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+          ip       = "192.168.1.115/24"
+      }
+    }
 }
 }
