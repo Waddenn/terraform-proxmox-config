@@ -82,17 +82,17 @@ module "lxc_containers" {
       }
     }
 
-    gitlab = {
-      vmid         = 104
-      target_node  = "nuc-pve-1"
-      rootfs_storage = "local-lvm"
-      rootfs_size = "16G"
-      memory = 6144
-      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-      network = {
-        ip       = "192.168.1.104/24"
-      }
-    }
+    # gitlab = {
+    #   vmid         = 104
+    #   target_node  = "nuc-pve-1"
+    #   rootfs_storage = "local-lvm"
+    #   rootfs_size = "16G"
+    #   memory = 6144
+    #   ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+    #   network = {
+    #     ip       = "192.168.1.104/24"
+    #   }
+    # }
 
     caddy = {
       vmid         = 105
