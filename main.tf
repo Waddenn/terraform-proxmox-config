@@ -223,5 +223,16 @@ module "lxc_containers" {
           ip       = "192.168.1.115/24"
       }
     }
+
+    nextcloud-pgsql = {
+      vmid         = 116
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      rootfs_size = "32G"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.116"
+      }
+    }
 }
 }
