@@ -24,17 +24,7 @@ module "lxc_containers" {
         ip       = "192.168.1.203/24"
       }
     }
-
-    kubernetes = {
-      vmid         = 204
-      target_node  = "proxade"
-      rootfs_storage = "Storage2"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-      network = {
-        ip       = "192.168.1.204/24"
-      }
-    }
-
+    
 # nuc-pve-1
   
     ansible = {
