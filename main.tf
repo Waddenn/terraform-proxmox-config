@@ -5,26 +5,6 @@ module "lxc_containers" {
 
   containers = {
 
-    grafana = {
-      vmid         = 202
-      target_node  = "proxade"
-      rootfs_storage = "Storage2"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-      network = {
-        ip       = "192.168.1.202/24"
-    }
-  }
-
-    prometheus = {
-      vmid         = 203
-      target_node  = "proxade"
-      rootfs_storage = "Storage2"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-      network = {
-        ip       = "192.168.1.203/24"
-      }
-    }
-    
 # nuc-pve-1
   
     ansible = {
@@ -107,18 +87,13 @@ module "lxc_containers" {
       }
     }
 
-    nextcloud = {
+    grafana = {
       vmid         = 106
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
-      rootfs_size = "120G"
-      memory = 2048
-      cores = 6
-      ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        bridge   = "VLAN40"
-        ip       = "192.168.40.106/24"
-        gateway  = "192.168.40.254"
+        ip       = "192.168.1.106/24"
       }
     } 
 
@@ -236,6 +211,16 @@ module "lxc_containers" {
         gateway  = "192.168.40.254"
       }
     }
+
+    prometheus = {
+      vmid         = 117
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.117"
+     }
+   }
   
 }
 }
