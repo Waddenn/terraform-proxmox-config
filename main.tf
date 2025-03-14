@@ -227,6 +227,8 @@ module "lxc_containers" {
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
       rootfs_size = "16G"
+      memory = 4096
+      cpus = 6
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         bridge   = "VLAN40"
