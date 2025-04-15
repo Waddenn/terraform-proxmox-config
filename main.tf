@@ -241,6 +241,7 @@ module "lxc_containers" {
       vmid         = 119
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
+      rootfs_size = "16G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         ip       = "192.168.1.119/24"
