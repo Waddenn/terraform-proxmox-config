@@ -248,6 +248,17 @@ module "lxc_containers" {
       }
      }
      
+    gatus = {
+      vmid         = 120
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        bridge   = "VLAN20"
+        ip       = "192.168.20.120/24"
+        gateway  = "192.168.20.254"
+      }
+     }
 
     nixos-gui = {
       vmid         = 203
