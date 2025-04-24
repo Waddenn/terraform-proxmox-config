@@ -281,6 +281,7 @@ module "lxc_containers" {
       memory = 20480
       cpus = 12
       ostype       = "debian"
+      password     = "password"
       ostemplate   = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
       network = {
         ip       = "192.168.20.251/24"
