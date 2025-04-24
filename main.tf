@@ -284,6 +284,8 @@ module "lxc_containers" {
       ostemplate   = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
       network = {
         ip       = "192.168.20.251/24"
+        bridge   = "VLAN20"
+        gateway  = "192.168.20.254"
       }
     }
   
