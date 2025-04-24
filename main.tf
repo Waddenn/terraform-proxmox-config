@@ -280,9 +280,7 @@ module "lxc_containers" {
       rootfs_size = "32G"
       memory = 20480
       cores = 12
-      ostype       = "debian"
-      password     = "password"
-      ostemplate   = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         ip       = "192.168.20.251/24"
         bridge   = "VLAN20"
