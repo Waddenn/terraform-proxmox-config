@@ -228,7 +228,7 @@ module "lxc_containers" {
       rootfs_storage = "local-lvm"
       rootfs_size = "32G"
       memory = 4096
-      cpus = 6
+      cores = 6
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         bridge   = "VLAN40"
@@ -266,7 +266,7 @@ module "lxc_containers" {
       rootfs_storage = "Storage2"
       rootfs_size = "32G"
       memory = 4096
-      cpus = 6
+      cores = 6
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         ip       = "192.168.1.203/24"
@@ -279,7 +279,7 @@ module "lxc_containers" {
       rootfs_storage = "Storage2"
       rootfs_size = "32G"
       memory = 20480
-      cpus = 12
+      cores = 12
       ostype       = "debian"
       password     = "password"
       ostemplate   = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
