@@ -282,7 +282,7 @@ module "lxc_containers" {
       cpus = 12
       ostemplate   = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
       network = {
-        ip       = "192.168.1.251/24"
+        ip       = "192.168.20.251/24"
       }
     }
   
