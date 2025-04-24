@@ -273,6 +273,18 @@ module "lxc_containers" {
       }
      }
      
+    github-runner = {
+      vmid         = 251
+      target_node  = "proxade"
+      rootfs_storage = "Storage2"
+      rootfs_size = "32G"
+      memory = 20480
+      cpus = 12
+      ostemplate   = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
+      network = {
+        ip       = "192.168.1.251/24"
+      }
+    }
   
 }
 }
