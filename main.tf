@@ -273,18 +273,18 @@ module "lxc_containers" {
       }
      }
      
-    # github-runner = {
-    #   vmid         = 251
-    #   target_node  = "proxade"
-    #   rootfs_storage = "Storage2"
-    #   rootfs_size = "32G"
-    #   memory = 20480
-    #   cores = 12
-    #   ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-    #   network = {
-    #     ip       = "192.168.1.251/24"
-    #   }
-    # }
+    github-runner = {
+      vmid         = 251
+      target_node  = "proxade"
+      rootfs_storage = "Storage2"
+      rootfs_size = "32G"
+      memory = 20480
+      cores = 12
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.251/24"
+      }
+    }
   
 }
 }
