@@ -24,7 +24,12 @@ jobs:
         run: terraform init
 
       - name: Terraform Format Check
+        id: fmt
         run: terraform fmt -check -recursive
+
+      - name: Show unformatted files if fmt fails
+        if: failure() && steps.fmt.outcome == 'failure'
+        run: terraform fmt -recursive -diff
 
       - name: Terraform Validate
         run: terraform validate
