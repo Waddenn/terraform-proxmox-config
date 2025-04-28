@@ -85,16 +85,6 @@ module "lxc_containers" {
       }
     }
 
-    grafana = {
-      vmid         = 106
-      target_node  = "nuc-pve-1"
-      rootfs_storage = "local-lvm"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-      network = {
-        ip       = "192.168.1.106/24"
-      }
-    } 
-
     authentik = {
       vmid         = 107
       target_node  = "nuc-pve-1"
@@ -210,17 +200,6 @@ module "lxc_containers" {
       }
     } 
 
-    prometheus = {
-      vmid         = 117
-      target_node  = "nuc-pve-1"
-      rootfs_storage = "local-lvm"
-      rootfs_size = "16G"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-      network = {
-        ip       = "192.168.1.117/24"
-     }
-   }
-
      onlyoffice = {
       vmid         = 118
       target_node  = "nuc-pve-1"
@@ -297,6 +276,27 @@ module "lxc_containers" {
         ip       = "192.168.1.251/24"
       }
     }
-  
+
+  #   grafana = {
+  #     vmid         = 106
+  #     target_node  = "nuc-pve-1"
+  #     rootfs_storage = "local-lvm"
+  #     ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+  #     network = {
+  #       ip       = "192.168.1.106/24"
+  #     }
+  #   } 
+
+  #   prometheus = {
+  #     vmid         = 117
+  #     target_node  = "nuc-pve-1"
+  #     rootfs_storage = "local-lvm"
+  #     rootfs_size = "16G"
+  #     ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+  #     network = {
+  #       ip       = "192.168.1.117/24"
+  #    }
+  #  }
+
 }
 }
