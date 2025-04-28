@@ -208,7 +208,7 @@ module "lxc_containers" {
         ip       = "192.168.40.116/24"
         gateway  = "192.168.40.254"
       }
-    }
+    } 
 
     prometheus = {
       vmid         = 117
@@ -272,6 +272,19 @@ module "lxc_containers" {
       }
      }
      
+    jellyseerr = {
+      vmid         = 121
+      target_node  = "nuc-pve-1"
+      rootfs_storage = "local-lvm"
+      cores = 6
+      rootfs_size = "16G"
+      memory = 6144
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.121/24"
+      }
+     }
+    
     github-runner = {
       vmid         = 251
       target_node  = "proxade"
