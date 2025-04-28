@@ -21,4 +21,4 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --all-projects --severity-threshold=medium
+          args: --all-projects --severity-threshold=medium --org=Waddenn
