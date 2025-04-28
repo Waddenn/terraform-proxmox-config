@@ -1,0 +1,30 @@
+name: Snyk Infrastructure as Code (Terraform) Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  snyk-iac:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Snyk CLI
+        uses: snyk/actions/setup@v2
+
+      - name: Run Snyk to check Terraform files
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk iac test --all-projects --severity-threshold=medium
+
+      - name: Upload Snyk results as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: snyk-results
+          path: snyk.*.json
+          if-no-files-found: ignore
