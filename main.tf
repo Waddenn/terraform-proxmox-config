@@ -260,7 +260,9 @@ module "lxc_containers" {
       memory = 6144
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
-        ip       = "192.168.1.121/24"
+        bridge   = "VLAN40"
+        ip       = "192.168.40.121/24"
+        gateway  = "192.168.40.254"
       }
      }
     
