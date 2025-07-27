@@ -22,6 +22,7 @@ module "lxc_containers" {
       vmid         = 100
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
+      rootfs_size = "16G" 
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         ip       = "192.168.1.100/24"
@@ -32,6 +33,7 @@ module "lxc_containers" {
       vmid         = 101
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
+      rootfs_size = "18G" 
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         ip       = "192.168.1.101/24"
@@ -256,7 +258,7 @@ module "lxc_containers" {
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
       cores = 6
-      rootfs_size = "16G"
+      rootfs_size = "24G"
       memory = 6144
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
