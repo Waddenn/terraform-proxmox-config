@@ -317,18 +317,19 @@ module "lxc_containers" {
       }
     }
 
-    # tp-monitoring= {
-    #   vmid         = 206
-    #   target_node  = "proxade"
-    #   rootfs_storage = "Storage2"
-    #   rootfs_size = "32G"
-    #   memory = 4096
-    #   cores = 6
-    #   ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-    #   network = {
-    #     ip       = "192.168.1.206/24"
-    #   }
-    # }
+    tp-monitoring= {
+      vmid         = 206
+      target_node  = "proxade"
+      rootfs_storage = "Storage2"
+      rootfs_size = "32G"
+      memory = 4096
+      cores = 6
+      ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
+      network = {
+        ip       = "192.168.1.206/24"
+      }
+    }
+
 
 }
 }
