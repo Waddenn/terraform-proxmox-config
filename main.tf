@@ -66,7 +66,7 @@ module "lxc_containers" {
       vmid         = 104
       target_node  = "proxade"
       rootfs_storage = "local-lvm"
-      rootfs_size = "32G"
+      rootfs_size = "40G"
       memory = 6144
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
@@ -100,18 +100,18 @@ module "lxc_containers" {
       }
     } 
 
-    linkwarden = {
-      vmid         = 108
-      target_node  = "nuc-pve-1"
-      rootfs_storage = "local-lvm"
-      rootfs_size = "16G"
-      ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
-      network = {
-        bridge   = "VLAN40"
-        ip       = "192.168.40.108/24"
-        gateway  = "192.168.40.254"
-      }
-    } 
+    # linkwarden = {
+    #   vmid         = 108
+    #   target_node  = "nuc-pve-1"
+    #   rootfs_storage = "local-lvm"
+    #   rootfs_size = "16G"
+    #   ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
+    #   network = {
+    #     bridge   = "VLAN40"
+    #     ip       = "192.168.40.108/24"
+    #     gateway  = "192.168.40.254"
+    #   }
+    # } 
 
     gotify = {
       vmid         = 109
