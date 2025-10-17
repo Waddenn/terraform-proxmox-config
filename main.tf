@@ -64,7 +64,7 @@ module "lxc_containers" {
 
     gitlab = {
       vmid         = 104
-      target_node  = "nuc-pve-1"
+      target_node  = "proxade"
       rootfs_storage = "local-lvm"
       rootfs_size = "32G"
       memory = 6144
