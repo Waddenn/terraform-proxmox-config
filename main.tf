@@ -193,7 +193,7 @@ module "lxc_containers" {
     nextcloud-pgsql = {
       vmid         = 116
       target_node  = "proxade"
-      rootfs_storage = "Storage2"
+      rootfs_storage = "Storage2:subvol-116-disk-0"
       rootfs_size = "32G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
