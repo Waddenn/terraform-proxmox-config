@@ -44,6 +44,7 @@ module "lxc_containers" {
       vmid         = 102
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
+      rootfs_size = "16G" 
       ostemplate   = "local:vztmpl/nixos-image-lxc-docker-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         bridge   = "VLAN20"         
@@ -91,7 +92,7 @@ module "lxc_containers" {
       vmid         = 107
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
-      rootfs_size = "16G"
+      rootfs_size = "24G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
         bridge   = "VLAN40"
@@ -167,7 +168,7 @@ module "lxc_containers" {
       vmid         = 114
       target_node  = "nuc-pve-1"
       rootfs_storage = "local-lvm"
-      rootfs_size = "16G"
+      rootfs_size = "32G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
            bridge   = "VLAN40"
@@ -191,8 +192,8 @@ module "lxc_containers" {
 
     nextcloud-pgsql = {
       vmid         = 116
-      target_node  = "nuc-pve-1"
-      rootfs_storage = "local-lvm"
+      target_node  = "proxade"
+      rootfs_storage = "Storage2"
       rootfs_size = "32G"
       ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
       network = {
@@ -239,19 +240,6 @@ module "lxc_containers" {
         gateway  = "192.168.20.254"
       }
      }
-
-    # nixos-gui = {
-    #   vmid         = 203
-    #   target_node  = "proxade"
-    #   rootfs_storage = "Storage2"
-    #   rootfs_size = "32G"
-    #   memory = 4096
-    #   cores = 6
-    #   ostemplate   = "local:vztmpl/nixos-image-lxc-base-proxmox-25.05-x86_64-linux.tar.xz"
-    #   network = {
-    #     ip       = "192.168.1.203/24"
-    #   }
-    #  }
      
     jellyseerr = {
       vmid         = 121
