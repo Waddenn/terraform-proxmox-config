@@ -45,7 +45,10 @@ resource "proxmox_lxc" "containers" {
       rootfs,
       network,
       features,
-      target_node
+      target_node,
+      cores,
+      memory,
+      swap
     ]
   }
 }
