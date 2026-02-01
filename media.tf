@@ -50,7 +50,7 @@ locals {
       # Profile: Large (with custom disk 500GB)
       cores          = local.profiles.large.cores
       memory         = local.profiles.large.memory
-      rootfs_size    = "500G"
+      rootfs_size    = "300G"
       
       network = {
         bridge = local.vlans.prod.bridge # vPROD
