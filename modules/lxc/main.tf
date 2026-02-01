@@ -47,7 +47,12 @@ resource "proxmox_lxc" "containers" {
       target_node,
       cores,
       memory,
-      swap
+      swap,
+      tags,
+      onboot,
+      cmode,
+      unprivileged,
+      hostname
     ]
   }
 }
