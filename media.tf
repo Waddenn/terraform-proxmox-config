@@ -5,12 +5,16 @@ locals {
       target_node    = "nuc-pve-1"
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "local-lvm"
+      
+      # Profile: Small
+      cores          = local.profiles.small.cores
+      memory         = local.profiles.small.memory
       rootfs_size    = local.profiles.small.rootfs_size
       
       network = {
-        bridge  = "VLAN20"
+        bridge  = local.vlans.prod.bridge # vPROD
         ip      = "192.168.20.110/24"
-        gateway = local.network.gateway_vlan20
+        gateway = local.vlans.prod.gateway
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.media
@@ -21,12 +25,16 @@ locals {
       target_node    = "nuc-pve-1"
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "local-lvm"
-      rootfs_size    = "32G" # Profile Medium
+      
+      # Profile: Medium
+      cores          = local.profiles.medium.cores
+      memory         = local.profiles.medium.memory
+      rootfs_size    = local.profiles.medium.rootfs_size
       
       network = {
-        bridge  = "VLAN40"
+        bridge  = local.vlans.dmz.bridge # vDMZ
         ip      = "192.168.40.114/24"
-        gateway = local.network.gateway_vlan40
+        gateway = local.vlans.dmz.gateway
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.media
@@ -37,12 +45,17 @@ locals {
       target_node    = "proxade"
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "Storage"
+      
+      # Profile: Large (with custom disk)
+      cores          = local.profiles.large.cores
+      memory         = local.profiles.large.memory
       rootfs_size    = "500G"
-      cores          = 4
-      memory         = 6144
       
       network = {
-        ip = "192.168.40.115/24"
+        bridge = local.vlans.dmz.bridge # vDMZ
+        ip     = "192.168.40.115/24"
+        # Gateway is default for bridge or overridden if needed. Assuming DMZ
+        gateway = local.vlans.dmz.gateway
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.media
@@ -54,15 +67,15 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "local-lvm"
       
-      # Custom Profile
-      cores          = 6
-      memory         = 6144
-      rootfs_size    = "24G"
+      # Profile: Large
+      cores          = local.profiles.large.cores
+      memory         = local.profiles.large.memory
+      rootfs_size    = local.profiles.large.rootfs_size
       
       network = {
-        bridge  = "VLAN40"
+        bridge  = local.vlans.dmz.bridge # vDMZ
         ip      = "192.168.40.121/24"
-        gateway = local.network.gateway_vlan40
+        gateway = local.vlans.dmz.gateway
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.media

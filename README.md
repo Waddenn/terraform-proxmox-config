@@ -18,12 +18,12 @@ Le projet est organisé pour séparer les responsabilités :
 
 L'infrastructure utilise une segmentation par VLANs :
 
-| ID | Usage | Gateway |
-|----|-------|---------|
-| 1 | Management / Default | 192.168.1.1 |
-| 20 | Infrastructure / IoT | 192.168.20.254 |
-| 30 | Secured / Private | 192.168.30.254 |
-| 40 | Services / DMZ-like | 192.168.40.254 |
+| ID | Nom | Usage | Gateway |
+|----|-----|-------|---------|
+| 1 | vmbr0 | Management / Default | 192.168.1.1 |
+| 20 | vPROD | Infrastructure / App | 192.168.20.254 |
+| 30 | vSEC | Security (Vaultwarden) | 192.168.30.254 |
+| 40 | vDMZ | Exposed Services | 192.168.40.254 |
 
 ## 🚀 Usage
 

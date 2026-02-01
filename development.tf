@@ -6,18 +6,18 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "local-lvm"
       
-      # Custom Profile
-      rootfs_size    = "32G"
-      memory         = 4096
+      # Profile: Medium (with custom cores)
       cores          = 6
+      memory         = local.profiles.medium.memory
+      rootfs_size    = local.profiles.medium.rootfs_size
       
       network = {
-        bridge  = "VLAN40"
+        bridge  = local.vlans.dmz.bridge # vDMZ
         ip      = "192.168.40.118/24"
-        gateway = local.network.gateway_vlan40
+        gateway = local.vlans.dmz.gateway
       }
       ssh_public_keys = var.ssh_public_key
-      tags            = concat(local.tags.app, ["office"]) # Categorized as app/office
+      tags            = concat(local.tags.app, ["office"])
     }
 
     bourse-dashboard = {
@@ -25,10 +25,15 @@ locals {
       target_node    = "nuc-pve-1"
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "local-lvm"
+      
+      # Profile: Small
+      cores          = local.profiles.small.cores
+      memory         = local.profiles.small.memory
       rootfs_size    = local.profiles.small.rootfs_size
       
       network = {
-        ip = "192.168.1.119/24"
+        bridge = local.vlans.mgmt.bridge
+        ip     = "192.168.1.119/24"
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.dev
@@ -40,13 +45,14 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "Storage2"
       
-      # Profile XL
-      rootfs_size    = "32G"
-      memory         = 20480
-      cores          = 12
+      # Profile: XL
+      cores          = local.profiles.xl.cores
+      memory         = local.profiles.xl.memory
+      rootfs_size    = local.profiles.xl.rootfs_size
       
       network = {
-        ip = "192.168.1.251/24"
+        bridge = local.vlans.mgmt.bridge
+        ip     = "192.168.1.251/24"
       }
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.dev, ["ci"])
@@ -58,13 +64,14 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "Storage2"
       
-      # Profile Medium-ish
-      rootfs_size    = "32G"
-      memory         = 4096
+      # Profile: Medium (with boosted cores)
       cores          = 6
+      memory         = local.profiles.medium.memory
+      rootfs_size    = local.profiles.medium.rootfs_size
       
       network = {
-        ip = "192.168.1.204/24"
+        bridge = local.vlans.mgmt.bridge
+        ip     = "192.168.1.204/24"
       }
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.app, ["game"])
@@ -76,16 +83,36 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "Storage2"
       
-      # Profile Medium-ish
-      rootfs_size    = "32G"
-      memory         = 4096
+      # Profile: Medium (with boosted cores)
       cores          = 6
+      memory         = local.profiles.medium.memory
+      rootfs_size    = local.profiles.medium.rootfs_size
       
       network = {
-        ip = "192.168.1.205/24"
+        bridge = local.vlans.mgmt.bridge
+        ip     = "192.168.1.205/24"
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.dev
+    }
+
+    hytale-server = {
+      vmid           = 206
+      target_node    = "proxade"
+      ostemplate     = local.templates.nixos_base
+      rootfs_storage = "Storage2"
+      
+      # Profile: Medium (Java needs RAM)
+      cores          = 4
+      memory         = 4096
+      rootfs_size    = "32G"
+      
+      network = {
+        bridge = local.vlans.prod.bridge
+        ip     = "192.168.1.206/24" # Assuming IP
+      }
+      ssh_public_keys = var.ssh_public_key
+      tags            = concat(local.tags.app, ["game"])
     }
   }
 }
