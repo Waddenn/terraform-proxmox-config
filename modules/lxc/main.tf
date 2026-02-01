@@ -64,7 +64,7 @@ resource "null_resource" "tailscale_tun_permission" {
   provisioner "local-exec" {
     command = <<EOT
       TARGET_IP="${each.value.target_node == "proxade" ? "192.168.1.1" : (each.value.target_node == "nuc-pve-1" ? "192.168.1.3" : each.value.target_node)}"
-      ssh -o StrictHostKeyChecking=no -o connectTimeout=10 root@$TARGET_IP "
+      ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no -o ConnectTimeout=30 -o BatchMode=yes root@$TARGET_IP "
         CONF_FILE='/etc/pve/lxc/${each.value.vmid}.conf'
         if ! grep -q 'lxc.cgroup2.devices.allow: c 10:200 rwm' \$CONF_FILE; then
           echo 'lxc.cgroup2.devices.allow: c 10:200 rwm' >> \$CONF_FILE
