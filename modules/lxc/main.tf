@@ -37,4 +37,15 @@ resource "proxmox_lxc" "containers" {
   ssh_public_keys = each.value.ssh_public_keys
   tags            = join(",", each.value.tags)
 
+  lifecycle {
+    ignore_changes = [
+      ssh_public_keys,
+      ostemplate,
+      ostype,
+      rootfs,
+      network,
+      features,
+      target_node
+    ]
+  }
 }
