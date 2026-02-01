@@ -43,7 +43,6 @@ resource "proxmox_lxc" "containers" {
       ostemplate,
       ostype,
       rootfs,
-      network,
       features,
       target_node,
       cores,
