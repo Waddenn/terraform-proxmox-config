@@ -115,5 +115,25 @@ locals {
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.app, ["game"])
     }
+
+    ai-controller = {
+      vmid           = 252
+      target_node    = "proxade"
+      ostemplate     = local.templates.nixos_docker
+      rootfs_storage = "Storage2"
+      
+      # Profile: XL (AI workloads: gemini-cli, codex-cli, Docker containers)
+      cores          = local.profiles.xl.cores
+      memory         = local.profiles.xl.memory
+      rootfs_size    = local.profiles.xl.rootfs_size
+      
+      network = {
+        bridge  = local.vlans.mgmt.bridge
+        ip      = "192.168.1.252/24"
+        gateway = local.vlans.mgmt.gateway
+      }
+      ssh_public_keys = var.ssh_public_key
+      tags            = concat(local.tags.dev, ["ai", "docker"])
+    }
   }
 }
