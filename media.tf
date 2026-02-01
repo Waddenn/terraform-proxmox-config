@@ -46,15 +46,20 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "Storage"
       
-      # Profile: Large (with custom disk)
+      # Profile: Large (with custom disk 1.7TB)
       cores          = local.profiles.large.cores
       memory         = local.profiles.large.memory
-      rootfs_size    = "500G"
+      rootfs_size    = "1700G"
       
       network = {
-        bridge = local.vlans.dmz.bridge # vDMZ
-        ip     = "192.168.40.115/24"
-        # Gateway is default for bridge or overridden if needed. Assuming DMZ
+        bridge = local.vlans.prod.bridge # vPROD
+        ip     = "192.168.20.115/24"
+        # Gateway default
+      }
+      ssh_public_keys = var.ssh_public_key
+      tags            = concat(local.tags.media, ["photo"])
+    }
+
     jellyseerr = {
       vmid           = 121
       target_node    = "nuc-pve-1"
