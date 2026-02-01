@@ -1,25 +1,5 @@
 locals {
   infrastructure_containers = {
-    ansible = {
-      vmid           = 252
-      target_node    = "nuc-pve-1"
-      ostemplate     = local.templates.nixos_docker
-      rootfs_storage = "local-lvm"
-      
-      # Profile: Small (with custom disk)
-      cores          = local.profiles.small.cores
-      memory         = local.profiles.small.memory
-      rootfs_size    = "24G" # Actual size on disk, preventing shrink
-      
-      network = {
-        # Management Network (LAN)
-        bridge = local.vlans.mgmt.bridge
-        ip     = "192.168.1.252/24"
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = local.tags.infrastructure
-    }
-
     terraform = {
       vmid           = 253
       target_node    = "nuc-pve-1"
