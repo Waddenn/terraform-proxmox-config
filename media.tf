@@ -2,9 +2,9 @@ locals {
   media_containers = {
     calibre = {
       vmid           = 110
-      target_node    = "nuc-pve-1"
+      target_node    = "proxade"
       ostemplate     = local.templates.nixos_base
-      rootfs_storage = "local-lvm"
+      rootfs_storage = "Storage"
       
       # Profile: Small
       cores          = local.profiles.small.cores
