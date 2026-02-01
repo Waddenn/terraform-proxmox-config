@@ -27,5 +27,5 @@ variable "pm_tls_insecure" {
 variable "ssh_public_key" {
   description = "SSH Public Key to inject into containers"
   type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILDWrexcT0dL92oAYuMxLpS+2WxBzwYA38C/paRGsZ2i tom@asus-nixos"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK9vbVGmVAz8ZcXUJY+SoqZ27eQL+bPFwKuQ/w4hgJcB"
 }

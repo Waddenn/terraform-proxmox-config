@@ -26,18 +26,20 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "local-lvm"
       
-      # Profile: Small
-      cores          = local.profiles.small.cores
-      memory         = local.profiles.small.memory
-      rootfs_size    = local.profiles.small.rootfs_size
+      # Managed: 8 cores, 3040MB RAM, 17G Disk
+      cores          = 8
+      memory         = 3040
+      rootfs_size    = "17G"
       
       network = {
         bridge = local.vlans.mgmt.bridge
-        ip     = "192.168.1.253/24" # Assuming .253 based on ID
+        ip     = "192.168.1.253/24"
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.infrastructure
     }
+
+
 
 
     tailscale-subnet = {

@@ -6,10 +6,10 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "local-lvm"
       
-      # Profile: Large
+      # Profile: Large (Actual: 50G)
       cores          = local.profiles.large.cores
       memory         = local.profiles.large.memory
-      rootfs_size    = local.profiles.large.rootfs_size
+      rootfs_size    = "50G"
       
       network = {
         bridge = local.vlans.mgmt.bridge # GitLab on Management network
@@ -156,6 +156,26 @@ locals {
       }
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.app, ["dashboard"])
+    }
+
+    nextcloud-pgsql = {
+      vmid           = 116
+      target_node    = "proxade"
+      ostemplate     = local.templates.nixos_base
+      rootfs_storage = "Storage2"
+      
+      # Managed: 3 cores, 2048MB, 32G
+      cores          = 3
+      memory         = 2048
+      rootfs_size    = "32G"
+      
+      network = {
+        bridge  = local.vlans.dmz.bridge
+        ip      = "192.168.40.116/24"
+        gateway = local.vlans.dmz.gateway
+      }
+      ssh_public_keys = var.ssh_public_key
+      tags            = concat(local.tags.app, ["db"])
     }
   }
 }

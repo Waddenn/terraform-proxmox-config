@@ -99,17 +99,18 @@ locals {
     hytale-server = {
       vmid           = 206
       target_node    = "proxade"
-      ostemplate     = local.templates.nixos_base
-      rootfs_storage = "Storage2"
+      ostemplate     = "local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
+      ostype         = "debian"
+      rootfs_storage = "local-lvm"
       
-      # Profile: Medium (Java needs RAM)
-      cores          = 4
-      memory         = 4096
-      rootfs_size    = "32G"
+      # Managed: 8 cores, 18144MB RAM, 20G Disk
+      cores          = 8
+      memory         = 18144
+      rootfs_size    = "20G"
       
       network = {
-        bridge = local.vlans.prod.bridge
-        ip     = "192.168.1.206/24" # Assuming IP
+        bridge = local.vlans.mgmt.bridge
+        ip     = "dhcp"
       }
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.app, ["game"])
