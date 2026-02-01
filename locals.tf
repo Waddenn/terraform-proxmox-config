@@ -42,7 +42,7 @@ locals {
   vlans = {
     mgmt = {
       bridge  = "vmbr0"
-      gateway = "192.168.1.1"
+      gateway = "192.168.1.254"
       cidr    = "192.168.1.0/24"
     }
     prod = {
