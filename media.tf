@@ -55,12 +55,6 @@ locals {
         bridge = local.vlans.dmz.bridge # vDMZ
         ip     = "192.168.40.115/24"
         # Gateway is default for bridge or overridden if needed. Assuming DMZ
-        gateway = local.vlans.dmz.gateway
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = local.tags.media
-    }
-
     jellyseerr = {
       vmid           = 121
       target_node    = "nuc-pve-1"
