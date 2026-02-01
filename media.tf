@@ -53,8 +53,9 @@ locals {
       rootfs_size    = "300G"
       
       network = {
-        bridge = local.vlans.dmz.bridge # vDMZ
-        ip     = "192.168.40.115/24"
+        bridge  = local.vlans.dmz.bridge # vDMZ
+        ip      = "192.168.40.115/24"
+        gateway = local.vlans.dmz.gateway
       }
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.media, ["photo"])

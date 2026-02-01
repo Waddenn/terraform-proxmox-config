@@ -24,13 +24,13 @@ variable "containers" {
       name     = optional(string, "eth0")
       bridge   = optional(string, "vmbr0")
       ip       = optional(string, "dhcp")
-      gateway  = optional(string, "192.168.1.254")
+      gateway  = optional(string, "192.168.1.1")
       firewall = optional(bool, false)
     }), {
       name     = "eth0"
       bridge   = "vmbr0"
       ip       = "dhcp"
-      gateway  = "192.168.1.254"
+      gateway  = "192.168.1.1"
       firewall = false
     })
 
