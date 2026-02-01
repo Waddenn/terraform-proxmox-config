@@ -4,7 +4,7 @@ locals {
       vmid           = 110
       target_node    = "proxade"
       ostemplate     = local.templates.nixos_base
-      rootfs_storage = "Storage"
+      rootfs_storage = "Storage2"
       
       # Profile: Small
       cores          = local.profiles.small.cores
