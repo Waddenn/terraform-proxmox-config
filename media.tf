@@ -41,6 +41,25 @@ locals {
     }
 
 
+    immich = {
+      vmid           = 115
+      target_node    = "proxade"
+      ostemplate     = local.templates.nixos_base
+      rootfs_storage = "Storage"
+      
+      # Profile: Large (with custom disk 500GB)
+      cores          = local.profiles.large.cores
+      memory         = local.profiles.large.memory
+      rootfs_size    = "500G"
+      
+      network = {
+        bridge = local.vlans.prod.bridge # vPROD
+        ip     = "192.168.20.115/24"
+      }
+      ssh_public_keys = var.ssh_public_key
+      tags            = concat(local.tags.media, ["photo"])
+    }
+
     jellyseerr = {
       vmid           = 121
       target_node    = "nuc-pve-1"
