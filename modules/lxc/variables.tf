@@ -40,9 +40,17 @@ variable "containers" {
       nesting = true
     })
 
-    ssh_public_keys = optional(string, "<<-EOT ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILDWrexcT0dL92oAYuMxLpS+2WxBzwYA38C/paRGsZ2i tom@asus-nixos EOT")
-    tags = optional(list(string), [])
+    ssh_public_keys = optional(string, null)
+    tags            = optional(list(string), [])
   }))
 
   default = {}
+
+  validation {
+    condition = alltrue([
+      for c in var.containers : can(regex("^192\\.168\\.(1|20|30|40)\\.", c.network.ip)) || c.network.ip == "dhcp"
+    ])
+    error_message = "IP address must be in allowed VLAN ranges (192.168.{1,20,30,40}.x) or 'dhcp'"
+  }
 }
+
