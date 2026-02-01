@@ -6,10 +6,10 @@ locals {
       ostemplate     = local.templates.nixos_docker
       rootfs_storage = "local-lvm"
       
-      # Profile: Small
+      # Profile: Small (with custom disk)
       cores          = local.profiles.small.cores
       memory         = local.profiles.small.memory
-      rootfs_size    = local.profiles.small.rootfs_size
+      rootfs_size    = "24G" # Actual size on disk, preventing shrink
       
       network = {
         # Management Network (LAN)

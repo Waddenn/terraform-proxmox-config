@@ -45,10 +45,10 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "Storage2"
       
-      # Profile: XL
-      cores          = local.profiles.xl.cores
-      memory         = local.profiles.xl.memory
-      rootfs_size    = local.profiles.xl.rootfs_size
+      # Profile: Medium (XL was overkill for 2.3G usage)
+      cores          = local.profiles.medium.cores
+      memory         = local.profiles.medium.memory
+      rootfs_size    = local.profiles.medium.rootfs_size
       
       network = {
         bridge = local.vlans.mgmt.bridge
@@ -103,10 +103,10 @@ locals {
       ostype         = "debian"
       rootfs_storage = "local-lvm"
       
-      # Managed: 8 cores, 18144MB RAM, 20G Disk
+      # Managed: 8 cores, 18144MB RAM, 32G Disk (Increased from 20G)
       cores          = 8
       memory         = 18144
-      rootfs_size    = "20G"
+      rootfs_size    = "32G"
       
       network = {
         bridge = local.vlans.mgmt.bridge

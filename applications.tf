@@ -164,10 +164,10 @@ locals {
       ostemplate     = local.templates.nixos_base
       rootfs_storage = "Storage2"
       
-      # Managed: 3 cores, 2048MB, 32G
+      # Managed: 3 cores, 2048MB, 50G
       cores          = 3
       memory         = 2048
-      rootfs_size    = "32G"
+      rootfs_size    = "50G"
       
       network = {
         bridge  = local.vlans.dmz.bridge
