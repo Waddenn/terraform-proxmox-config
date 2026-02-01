@@ -86,10 +86,10 @@ locals {
       ostemplate     = local.templates.nixos_docker
       rootfs_storage = "local-lvm"
       
-      # Profile: Small
-      cores          = local.profiles.small.cores
-      memory         = local.profiles.small.memory
-      rootfs_size    = local.profiles.small.rootfs_size
+      # Profile: Medium (Upgraded due to high usage ~68%)
+      cores          = local.profiles.medium.cores
+      memory         = local.profiles.medium.memory
+      rootfs_size    = local.profiles.medium.rootfs_size
       
       network = {
         bridge  = local.vlans.prod.bridge # vPROD
