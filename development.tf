@@ -12,12 +12,31 @@ locals {
       rootfs_size    = local.profiles.medium.rootfs_size
       
       network = {
-        bridge  = local.vlans.dmz.bridge # vDMZ
+        bridge  = local.vlans.dmz.bridge
         ip      = "192.168.40.118/24"
         gateway = local.vlans.dmz.gateway
       }
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.app, ["office"])
+    }
+
+    authelia = {
+      vmid           = 123
+      target_node    = "nuc-pve-1"
+      ostemplate     = local.templates.nixos_base
+      rootfs_storage = "local-lvm"
+      
+      cores          = 2
+      memory         = local.profiles.medium.memory
+      rootfs_size    = local.profiles.medium.rootfs_size
+      
+      network = {
+        bridge  = local.vlans.dmz.bridge 
+        ip      = "192.168.40.123/24"
+        gateway = local.vlans.dmz.gateway
+      }
+      ssh_public_keys = var.ssh_public_key
+      tags            = concat(local.tags.app, ["auth"])
     }
 
     bourse-dashboard = {
