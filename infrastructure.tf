@@ -20,8 +20,6 @@ locals {
     }
 
 
-
-
     tailscale-subnet = {
       vmid           = 100
       target_node    = "nuc-pve-1"
@@ -80,23 +78,5 @@ locals {
       tags            = local.tags.infrastructure
     }
 
-    adguardhome = {
-      vmid           = 103
-      target_node    = "nuc-pve-1"
-      ostemplate     = local.templates.nixos_base
-      rootfs_storage = "local-lvm"
-      
-      # Profile: Small
-      cores          = local.profiles.small.cores
-      memory         = local.profiles.small.memory
-      rootfs_size    = local.profiles.small.rootfs_size
-      
-      network = {
-        bridge = local.vlans.mgmt.bridge
-        ip     = "192.168.1.103/24"
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = local.tags.infrastructure
-    }
   }
 }

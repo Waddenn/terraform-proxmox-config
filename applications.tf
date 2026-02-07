@@ -1,23 +1,5 @@
 locals {
   application_containers = {
-    gitlab = {
-      vmid           = 104
-      target_node    = "proxade"
-      ostemplate     = local.templates.nixos_base
-      rootfs_storage = "local-lvm"
-      
-      # Profile: Large (Actual: 50G)
-      cores          = local.profiles.large.cores
-      memory         = local.profiles.large.memory
-      rootfs_size    = "50G"
-      
-      network = {
-        bridge = local.vlans.mgmt.bridge # GitLab on Management network
-        ip     = "192.168.1.104/24"
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = local.tags.app
-    }
 
     caddy = {
       vmid           = 105
@@ -39,26 +21,6 @@ locals {
       tags            = concat(local.tags.app, ["proxy"])
     }
 
-    authentik = {
-      vmid           = 107
-      target_node    = "nuc-pve-1"
-      ostemplate     = local.templates.nixos_base
-      rootfs_storage = "local-lvm"
-      
-      # Profile: Medium (fitting for auth server)
-      cores          = local.profiles.medium.cores
-      memory         = local.profiles.medium.memory
-      rootfs_size    = local.profiles.medium.rootfs_size
-      
-      network = {
-        bridge  = local.vlans.dmz.bridge # vDMZ
-        ip      = "192.168.40.107/24"
-        gateway = local.vlans.dmz.gateway
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = concat(local.tags.app, ["auth"])
-    }
-
     gotify = {
       vmid           = 109
       target_node    = "nuc-pve-1"
@@ -77,26 +39,6 @@ locals {
       }
       ssh_public_keys = var.ssh_public_key
       tags            = local.tags.app
-    }
-
-    gitea = {
-      vmid           = 112
-      target_node    = "nuc-pve-1"
-      ostemplate     = local.templates.nixos_docker
-      rootfs_storage = "local-lvm"
-      
-      # Profile: Small
-      cores          = local.profiles.small.cores
-      memory         = local.profiles.small.memory
-      rootfs_size    = local.profiles.small.rootfs_size
-      
-      network = {
-        bridge  = local.vlans.dmz.bridge # vDMZ
-        ip      = "192.168.40.112/24"
-        gateway = local.vlans.dmz.gateway
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = concat(local.tags.app, ["git"])
     }
 
     vaultwarden = {
@@ -139,25 +81,6 @@ locals {
       tags            = concat(local.tags.app, ["monitoring"])
     }
     
-    glance = {
-      vmid           = 122
-      target_node    = "nuc-pve-1"
-      ostemplate     = local.templates.nixos_base
-      rootfs_storage = "local-lvm"
-      
-      # Profile: Small
-      cores          = local.profiles.small.cores
-      memory         = local.profiles.small.memory
-      rootfs_size    = local.profiles.small.rootfs_size
-      
-      network = {
-        bridge = local.vlans.mgmt.bridge
-        ip     = "192.168.1.122/24"
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = concat(local.tags.app, ["dashboard"])
-    }
-
 
     nextcloud-pgsql = {
       vmid           = 116
