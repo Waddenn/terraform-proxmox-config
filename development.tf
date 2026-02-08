@@ -154,5 +154,26 @@ locals {
       ssh_public_keys = var.ssh_public_key
       tags            = concat(local.tags.dev, ["ai", "docker"])
     }
+
+    dev-debian = {
+      vmid           = 124
+      target_node    = "proxade"
+      ostemplate     = "local:vztmpl/debian-13-standard_13.1-2_amd64.tar.zst"
+      ostype         = "debian"
+      rootfs_storage = "Storage2"
+      
+      # Profile: XL (Local dev debian)
+      cores          = local.profiles.xl.cores
+      memory         = local.profiles.xl.memory
+      rootfs_size    = local.profiles.xl.rootfs_size
+      
+      network = {
+        bridge  = local.vlans.mgmt.bridge
+        ip      = "192.168.1.124/24"
+        gateway = local.vlans.mgmt.gateway
+      }
+      ssh_public_keys = var.ssh_public_key
+      tags            = concat(local.tags.dev, ["debian", "debian-13"])
+    }
   }
 }
