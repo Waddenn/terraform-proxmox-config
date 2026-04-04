@@ -21,25 +21,6 @@ locals {
       tags            = concat(local.tags.app, ["proxy"])
     }
 
-    gotify = {
-      vmid           = 109
-      target_node    = "nuc-pve-1"
-      ostemplate     = local.templates.nixos_base
-      rootfs_storage = "local-lvm"
-      
-      # Profile: Small
-      cores          = local.profiles.small.cores
-      memory         = local.profiles.small.memory
-      rootfs_size    = local.profiles.small.rootfs_size
-      
-      network = {
-        bridge  = local.vlans.prod.bridge # vPROD
-        ip      = "192.168.20.109/24"
-        gateway = local.vlans.prod.gateway
-      }
-      ssh_public_keys = var.ssh_public_key
-      tags            = local.tags.app
-    }
 
     vaultwarden = {
       vmid           = 113
